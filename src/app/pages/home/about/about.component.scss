@@ -15,9 +15,9 @@
   
   .first-section,
   .second-section {
-    color: white;
-    background-color: #234a6b;
-  
+    color: black;
+    // background: url("../../../../assets/images/banner.jpeg") no-repeat center / cover;
+    background-color: #c7ade2;
     padding: 2rem 1.5rem 2rem 2rem;
     margin-top: 2rem;
   }
@@ -33,29 +33,28 @@
     width: 40%;
     height: 2.5rem;
     font-weight: bold;
-    outline: none;
-    border: 1px solid #ffb05a;
+    outline: none; 
+    margin: 0%;
+    border: 1px solid #9261c6;
   }
   
   #testSuite {
-    margin-left: 2rem;
-    background-color: #234a6b;
-    color: #ffb05a;
+    // margin-left: 2rem;
+    background-color: #9261c6;
+    color: black;
   }
 
   #testSuite:hover {
-    color: #234a6b;
-    background-color: #ffb05a;
+    background-color: transparent;
   }
   
   #watchDemo {
     margin-left: 2rem;
-    background-color: #234a6b;
-    color: #ffb05a;
+    background-color: transparent;
+    color: black;
   }
   #watchDemo:hover {
-    color: #234a6b;
-    background-color: #ffb05a;
+    background-color: #9261c6;
   }
   
   .second-section {
