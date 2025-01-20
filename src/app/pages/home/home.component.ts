@@ -26,10 +26,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     route: "contact"
   },
   {
-    name: "Add Test Case",
-    route: "/pages/add-test-case"
-  },
-  {
     name: "Login / Signup",
     route: "signup"
   },
