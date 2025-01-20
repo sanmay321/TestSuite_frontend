@@ -1,0 +1,59 @@
+<!-- <header class="header">
+    <button (click)="toggleMenu()" class="menu-toggle-btn">
+      ☰
+    </button>
+    <h1>Dashboard</h1>
+  </header> -->
+
+<mat-toolbar *ngIf="isVisible" class="d-flex justify-content-between">
+  <button class="menu-button" mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="search-bar-wrap">
+    <input class="search-bar" matInput type="search" placeholder="Search..." />
+    <svg class="search-bar-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.8395 15.4605L13.1641 11.7852C14.0489 10.6072 14.5266 9.17331 14.525 7.7C14.525 3.93672 11.4633 0.875 7.7 0.875C3.93672 0.875 0.875 3.93672 0.875 7.7C0.875 11.4633 3.93672 14.525 7.7 14.525C9.17331 14.5266 10.6072 14.0489 11.7852 13.1641L15.4605 16.8395C15.6466 17.0058 15.8893 17.0945 16.1387 17.0876C16.3881 17.0806 16.6255 16.9784 16.8019 16.8019C16.9784 16.6255 17.0806 16.3881 17.0876 16.1387C17.0945 15.8893 17.0058 15.6466 16.8395 15.4605ZM2.825 7.7C2.825 6.73582 3.11091 5.79329 3.64659 4.9916C4.18226 4.18991 4.94363 3.56506 5.83442 3.19609C6.72521 2.82711 7.70541 2.73057 8.65107 2.91867C9.59672 3.10677 10.4654 3.57107 11.1471 4.25285C11.8289 4.93464 12.2932 5.80328 12.4813 6.74893C12.6694 7.69459 12.5729 8.67479 12.2039 9.56558C11.8349 10.4564 11.2101 11.2177 10.4084 11.7534C9.60672 12.2891 8.66418 12.575 7.7 12.575C6.40755 12.5734 5.16847 12.0593 4.25457 11.1454C3.34066 10.2315 2.82655 8.99245 2.825 7.7Z" fill="white"/>
+    </svg>      
+  </div>
+  <!-- <span class="company-name">ABC</span> -->
+  <select class="company-name" name="cars" id="cars">
+    <option value="XYZ Project">XYZ Project</option>
+    <option value="abc">abc</option>
+    <option value="def">def</option>
+    <option value="geh">geh</option>
+  </select>
+  <span class="spacer"></span>
+    <img style="width: 20px;height: 20px;margin-right: 1rem;cursor: pointer;" src="assets/images/en-flag.png" alt="#">
+  <!-- <button type="button" class="btn btn-primary"> -->
+    <svg style="color: white; width: 20px; height: 20px; margin-right: 1rem;cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell"
+      viewBox="0 0 16 16">
+      <path
+        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+    </svg> 
+    <svg style="margin-right: 1rem;cursor: pointer;" width="20" height="20" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_39_2)">
+      <path d="M30 2.81752C30 1.26144 28.688 0 27.0696 0H2.9304C1.31198 0 0 1.26144 0 2.81752V21.1825C0 22.7386 1.31198 24 2.9304 24H27.0696C28.688 24 30 22.7386 30 21.1825V2.81752ZM2.9461 2.2516H27.0926C27.4158 2.2516 27.6759 2.49941 27.6759 2.81017V2.83461L15.4332 14.607C15.2838 14.7506 15.1101 14.7721 15.0195 14.7721C14.9288 14.7721 14.7545 14.7506 14.6052 14.607L2.35955 2.83301V2.81017C2.35955 2.49941 2.62293 2.2516 2.9461 2.2516ZM27.0926 21.7484H2.9461C2.62293 21.7484 2.35955 21.4911 2.35955 21.1804V6.02066L12.9478 16.2009C13.5013 16.733 14.2373 17.0261 15.02 17.0261C15.8029 17.026 16.5374 16.7329 17.0908 16.2008L27.6759 6.02224V21.1804C27.6759 21.4911 27.4158 21.7484 27.0926 21.7484Z" fill="white"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_39_2">
+      <rect width="30" height="24" fill="white"/>
+      </clipPath>
+      </defs>
+    </svg>
+    <!-- <span class="badge bg-danger">4</span> -->
+  <!-- </button> -->
+   <div class="profile-item">
+    <mat-icon style="color: white;" aria-hidden="false" fontIcon="perm_identity"></mat-icon>
+   </div>
+  <select style="margin-right: 1rem; margin-left: 4px;" class="company-name" name="cars" id="profile">
+    <option value="Alex M.">Alex M.</option>
+    <option value="abc">abc</option>
+    <option value="def">def</option>
+    <option value="geh">geh</option>
+  </select>
+  <!-- <button mat-button class="btn btn-outline-light" (click)="login()">Login</button> -->
+  <mat-icon style="color: white;cursor: pointer;" aria-hidden="false" fontIcon="settings" [matMenuTriggerFor]="settingsMenu"></mat-icon>
+  <mat-menu #settingsMenu="matMenu">
+    <button mat-menu-item routerLink="">Setting</button>
+  </mat-menu>
+</mat-toolbar>

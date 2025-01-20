@@ -1,0 +1,139 @@
+
+
+<div id="main">
+
+  <div id="main-left">
+
+  <div class="header-bar">
+    <!-- Left Section with Icon and Title -->
+    <div class="title-section">
+      <div class="icon">RS</div>
+      <div class="title">Document Editing</div>
+    </div>
+
+    <!-- Right Section with Icons and Buttons -->
+    <div class="actions-section">
+      <i class="icon mail"></i>
+      <i class="icon document"></i>
+      <i class="icon lock"></i>
+      <i class="icon pie-chart"></i>
+      <button class="action-button">Reports</button>
+      <button class="action-button">Rerun</button>
+      <button class="action-button">Edit</button>
+      <button class="action-button">Suite</button>
+    </div>
+  </div>
+
+  <div id="left-report-section" >
+
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div id="left-report-chart-section">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [responsive]="chartOptions.responsive"
+    ></apx-chart>
+  </div>
+  <div id="left-report-result-section">
+  <p>52%</p>
+  <p>Passed</p>
+  <p>75/274 untested(27%)</p>
+  </div>
+
+  </div>
+  <!-- --  -->
+
+  <div class="container">
+
+
+  <div id="filter-section">
+    <div>Sort : Section</div>
+    <div>Filter : None</div>
+    <div>Add Results</div>
+    <!-- <div> -->
+      <select name="pets" id="pet-select" >
+        <option value="">Assign To</option>
+
+      </select>
+
+    <!-- </div> -->
+    <div>Columns</div>
+  </div>
+
+  <div id="table-list-section"></div>
+  <h3>Prerequisites </h3><p>(13)</p>
+    <table id="table-list-section">
+      <thead id="table-head">
+        <tr >
+          <th><input type="checkbox"> ID</th>
+          <th>Title</th>
+          <th>Assigned To</th>
+          <th>Defects</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="prerequisites-list-card" *ngFor="let item of prerequisites">
+          <td><input type="checkbox"> {{ item.id }}</td>
+          <td id="prerequisites-list-title">{{ item.title }}</td>
+          <td id="prerequisites-list-assignedTo">{{ item.assignedTo }}</td>
+          <td id="prerequisites-list-defects"><a href="#">{{ item.defects }}</a></td>
+          <td id="prerequisites-list-status">
+            <span [ngClass]="getStatusClass(item.status)">
+
+              <select id="prerequisites-list-status-option" name="" >
+                <option  value="">{{ item.status }}</option>
+              </select>
+
+
+            </span>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+
+  <!-- --  -->
+  </div>
+  <!-- <div id="main-right"> -->
+
+
+    <div class="right-section">
+
+
+      <ul class="section-list">
+        <div class="right-section-header">
+        <Select>
+            <Option>All</Option>
+            <Option>Last Date Modified</Option>
+          </Select>
+
+        </div>
+        <div>
+
+        </div>
+        <li *ngFor="let section of fileSections">
+          <div class="folder" (click)="toggleSection(section)">
+            <span class="folder-icon" [class.expanded]="section.expanded"></span>
+            <span>{{ section.name }}</span>
+          </div>
+
+          <ul *ngIf="section.expanded" class="sub-list">
+            <li *ngFor="let subSection of section.subSections">
+             <img height="15px" width="15px" src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" alt="">
+              <span class="sub-folder">{{ subSection }}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- <button class="add-section">+ Add Section</button> -->
+    </div>
+  <!-- </div> -->
+
+  </div>
+

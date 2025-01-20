@@ -1,0 +1,8 @@
+<p>sidebar works!</p>
+<mat-nav-list>
+  <mat-list-item *ngFor="let section of sections">
+    <mat-icon>folder</mat-icon>
+    <h4 matLine>{{ section.name }}</h4>
+    <p matLine>{{ section.details }}</p>
+  </mat-list-item>
+</mat-nav-list>

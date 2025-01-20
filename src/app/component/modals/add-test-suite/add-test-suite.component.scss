@@ -1,0 +1,88 @@
+.add-test-run-main {
+  padding: 1rem;
+}
+
+.add-test-run-header {
+  text-align: center;
+  color: purple;
+
+  h1,
+  p {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.add-test-run-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.add-test-run-title {
+  text-align: center;
+}
+
+.add-test-run-body {
+  width: 80%;
+}
+
+.add-test-run-outer-body {
+  a {
+    float: right;
+    color: blue;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 2px;
+  margin-top: 1rem;
+  color: purple;
+  font-weight: 500;
+
+  span {
+    color: red;
+  }
+}
+
+input,
+textarea {
+  width: 95%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+small {
+  color: red;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10rem;
+  background: purple;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border: none;
+}
+
+button:disabled {
+  background-color: #aaa;
+}

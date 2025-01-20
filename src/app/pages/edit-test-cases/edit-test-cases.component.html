@@ -1,0 +1,115 @@
+
+
+<!-- <app-navmenu></app-navmenu> -->
+<div id="body">
+
+
+  <!-- ! left-section  -->
+  <div class="container">
+    <div class="header">
+      <h1>Edit Test Case</h1>
+    </div>
+
+    <form class="test-case-form">
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" placeholder="Verify CSV import with attached test data file">
+      </div>
+
+      <!-- Section, Type, Priority, Estimate -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="section">Section</label>
+          <select id="section">
+            <option>Opening Documents</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Type</label>
+          <select id="type">
+            <option>Functionality</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option>4 - Must Test</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="estimate">Estimate</label>
+          <input type="text" id="estimate" placeholder="3m">
+        </div>
+      </div>
+
+      <!-- Milestone, References -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="milestone">Milestone</label>
+          <input type="text" id="milestone" placeholder="Release 3.7">
+        </div>
+
+        <div class="form-group">
+          <label for="references">References</label>
+          <input type="text" id="references" placeholder="DH-2355">
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" rows="4" placeholder="Describe the test case..."></textarea>
+      </div>
+
+      <!-- Steps Section -->
+      <div class="steps-section">
+        <h3>Steps</h3>
+
+        <!-- Step 1 -->
+        <div class="step" *ngFor="let s of steps;let i = index">
+          <div class="step-header">
+            <span>{{i + 1}}. {{s.description}}</span>
+            <button type="button" class="remove-step" (click)="removeStep(i)">✖</button>
+          </div>
+          <textarea class="expected-result" rows="3" [placeholder]="'Expected Result:' + s.expectedResult "></textarea>
+        </div>
+
+        <!-- Add Step Button -->
+        <button type="button" class="add-step" (click)="addStep()">+ Add Step</button>
+      </div>
+
+      <!-- Save and Cancel Buttons -->
+      <div class="form-actions">
+        <button type="submit" class="save-btn">Save Test Case</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- ! right section  -->
+  <div class="right-panel">
+    <!-- Add Attachment Button -->
+    <button class="add-attachment-btn">Add Attachment</button>
+
+    <!-- Attachments Section -->
+    <div class="attachments-section">
+      <label>Attachments:</label>
+      <p>None.</p>
+    </div>
+
+    <!-- Actions Section -->
+    <div class="actions-section">
+      <label>Actions:</label>
+      <p>Delete a test case to remove it from the test suite. This also deletes all related running tests.</p>
+      <a href="#" class="delete-link">Delete this test case</a>
+    </div>
+  </div>
+
+</div>
+
+

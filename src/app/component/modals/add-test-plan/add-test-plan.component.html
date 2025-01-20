@@ -1,0 +1,44 @@
+<div>
+  <div class="add-test-run-main">
+    <div (click)="close()">
+      <svg
+        class="add-test-run-close"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 1L19 19"
+          stroke="black"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M1 19L19 1"
+          stroke="black"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+
+    <h2 class="add-test-run-title">{{ data.title }}</h2>
+    <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div style="width: 100%;">
+        <label for="text">Name <span>*</span></label>
+        <input id="text" formControlName="name" />
+      </div>
+      <div style="width: 100%;">
+        <label for="description">Description <span>*</span></label>
+        <textarea id="description" rows="5" formControlName="description" ></textarea>
+      </div>
+      <div class="add-test-run-outer-body">
+        <button type="submit">{{data.testData ? 'Update' : 'Create'}}</button>
+      </div>
+    </form>
+  </div>
+</div>

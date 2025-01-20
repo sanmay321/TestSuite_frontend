@@ -1,0 +1,36 @@
+<mat-card class="test-cases-section">
+  <mat-card-title>Test Cases</mat-card-title>
+
+  <!-- Filters Section -->
+  <div class="filters">
+    <mat-form-field>
+      <mat-label>Sort</mat-label>
+      <mat-select>
+        <mat-option value="section">Section</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput placeholder="None">
+    </mat-form-field>
+  </div>
+
+  <!-- Test Cases List -->
+  <mat-list>
+    <h3 mat-subheader>Prerequisites</h3>
+    <mat-list-item *ngFor="let case of testCasesPrerequisites">
+      <mat-checkbox></mat-checkbox>
+      {{ case.id }} - {{ case.title }}
+    </mat-list-item>
+
+    <h3 mat-subheader>Software & Versions</h3>
+    <mat-list-item *ngFor="let case of testCasesSoftware">
+      <mat-checkbox></mat-checkbox>
+      {{ case.id }} - {{ case.title }}
+    </mat-list-item>
+  </mat-list>
+
+  <!-- Add New Case Button -->
+  <button mat-button>Add Case</button>
+</mat-card>

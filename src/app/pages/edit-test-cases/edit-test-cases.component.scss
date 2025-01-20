@@ -1,0 +1,220 @@
+/* Container and general layout */
+
+
+#body{
+  display: flex;
+}
+
+
+.container {
+  // max-width:80%;
+  width: 80%;
+  margin: auto;
+  // padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.header {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: start;
+  padding-left: 10px;
+
+}
+
+
+h1 {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  color: #333;
+  font-family: Arial, sans-serif;
+
+}
+
+.test-case-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Form row to arrange inputs side by side */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Steps section */
+.steps-section {
+  margin-top: 30px;
+}
+
+.step {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.step-header span {
+  font-weight: bold;
+}
+
+.remove-step {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Add step button */
+.add-step {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Action buttons */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.save-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn:hover, .cancel-btn:hover, .add-step:hover {
+  opacity: 0.9;
+}
+
+
+/* Right Panel Container */
+.right-panel {
+  width: 20%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Add Attachment Button */
+.add-attachment-btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Attachments Section */
+.attachments-section {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.attachments-section label {
+  background: grey;
+  padding: 5px;
+
+  font-weight: bold;
+  color: white;
+}
+
+.attachments-section p {
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Actions Section */
+.actions-section {
+  width: 100%;
+}
+
+.actions-section label {
+  background: grey;
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.actions-section p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.delete-link {
+  color: #f44336;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.delete-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

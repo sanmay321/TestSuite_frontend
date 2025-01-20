@@ -1,0 +1,48 @@
+footer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
+    background-color: #234a6b;
+    color: beige;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  footer button {
+    width: 100%;
+    background-color: #ffb05a;
+    color: #234a6b;
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem;
+    font-weight: bolder;
+    border-radius: 2rem;
+    outline: none;
+  }
+  
+  .footNav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+  }
+  
+  .footNav a {
+    color: #ffb05a;
+    text-decoration: none;
+  }
+  
+  footer p:hover {
+    color: grey;
+  }
+  
+  .footNav a:hover {
+    color: gold;
+  }
+  
+  footer button:hover {
+    background-color: gold;
+  }
+
+  .footMenu p{
+    cursor: pointer;
+  }
+  

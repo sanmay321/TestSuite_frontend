@@ -1,0 +1,216 @@
+<!-- <div class="container">
+  <app-navmenu></app-navmenu>
+
+  <div class="main-content">
+
+    <div class="test-cases">
+      <div class="table-header">
+        <span>Test Cases</span>
+        <div>
+
+          <div id="parent">
+
+            <Select id="report-dropdown">
+              <Option>Reports</Option>
+              <Option>1</Option>
+            </Select>
+            <div id="run-test">
+
+              Run Test
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="toolbar">
+        <div>
+
+          <span>Sort: <a href="#">Section</a></span>
+          <span>Filter: <a href="#">None</a></span>
+        </div>
+        <div class="toolbar-right">
+          <button class="btn btn-primary">+ Add Case</button>
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle">Edit</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Edit Case</a>
+              <a class="dropdown-item" href="#">Edit Multiple</a>
+            </div>
+          </div>
+
+          <button class="btn btn-danger">Delete</button>
+
+          <button class="btn btn-default">Columns</button>
+        </div>
+
+      </div>
+      
+      <div *ngFor="let section of testCases">
+        <h4>{{ section.name }} <span>{{ section.count }}</span></h4>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let case of section.cases">
+              <td>{{ case.id }}</td>
+              <td>{{ case.title }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a>Add Case</a> | <a>Add Subsection</a>
+      </div>
+    </div>
+
+
+    <div class="right-section">
+      <button class="add-test-case">+ Add Test Case</button>
+      <p>Contains {{ sections.length }} sections and 191 cases.</p>
+      <a href="#">Edit description</a>
+
+      <ul class="section-list">
+        <div class="right-section-header">
+          <Select>
+            <Option>All</Option>
+            <Option>Last Date Modified</Option>
+          </Select>
+          <div>Add Section</div>
+        </div>
+        <div>
+
+        </div>
+        <li *ngFor="let section of fileSections">
+          <div class="folder" (click)="toggleSection(section)">
+            <span class="folder-icon" [class.expanded]="section.expanded"></span>
+            <span>{{ section.name }}</span>
+          </div>
+
+          <ul *ngIf="section.expanded" class="sub-list">
+            <li *ngFor="let subSection of section.subSections">
+              <img height="15px" width="15px" src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" alt="">
+              <span class="sub-folder">{{ subSection }}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div> -->
+
+<div class="container">
+  <!-- Header -->
+  <!-- <app-navmenu (navSelected)="setActive($event)"></app-navmenu> -->
+
+  <!-- Sidebar and Main Content -->
+  <div class="main-content">
+
+    <!-- Conditionally load components based on the activeNav -->
+    <div class="content">
+      <ng-container *ngIf="activeNav === 'Todo'">
+        <app-todo></app-todo>
+      </ng-container>
+
+      <ng-container *ngIf="activeNav === 'Test Cases'">
+        <!-- Test Cases Section -->
+        <div class="test-cases">
+          <div class="table-header">
+            <span>Test Cases</span>
+            <div>
+              <div id="parent">
+                <select id="report-dropdown">
+                  <option>Reports</option>
+                  <option>1</option>
+                </select>
+                <div id="run-test">Run Test</div>
+              </div>
+            </div>
+          </div>
+          <!-- Filter part -->
+          <div class="toolbar">
+            <div>
+              <span>Sort: <a href="#">Section</a></span>
+              <span>Filter: <a href="#">None</a></span>
+            </div>
+            <div class="toolbar-right">
+              <button class="btn btn-primary">+ Add Case</button>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle">Edit</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Edit Case</a>
+                  <a class="dropdown-item" href="#">Edit Multiple</a>
+                </div>
+              </div>
+              <button class="btn btn-danger">Delete</button>
+              <button class="btn btn-default">Columns</button>
+            </div>
+          </div>
+          <!-- Table content -->
+          <div *ngFor="let section of testCases">
+            <h4>{{ section.name }} <span>{{ section.count }}</span></h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" (change)="toggleAll(section, $event)" /> <!-- Select All Checkbox -->
+                  </th>
+                  <th>ID</th>
+                  <th>Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let case of section.cases">
+                  <td>
+                    <input type="checkbox" [(ngModel)]="case.selected" /> <!-- Individual Checkbox -->
+                  </td>
+                  <td>{{ case.id }}</td>
+                  <td routerLink="/pages/edit-test-case" class="test-cases__custom-link">{{ case.title }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <a>Add Case</a> | <a>Add Subsection</a>
+          </div>
+        </div>
+        <div class="right-section">
+          <button class="add-test-case">+ Add Test Case</button>
+          <p>Contains {{ sections.length }} sections and 191 cases.</p>
+          <a href="#">Edit description</a>
+
+          <ul class="section-list">
+            <div class="right-section-header">
+              <Select>
+                <Option>All</Option>
+                <Option>Last Date Modified</Option>
+              </Select>
+              <div>Add Section</div>
+            </div>
+            <div>
+
+            </div>
+            <li *ngFor="let section of fileSections">
+              <div class="folder" (click)="toggleSection(section)">
+                <span class="folder-icon" [class.expanded]="section.expanded"></span>
+                <span>{{ section.name }}</span>
+              </div>
+
+              <ul *ngIf="section.expanded" class="sub-list">
+                <li *ngFor="let subSection of section.subSections">
+                  <img height="15px" width="15px" src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" alt="">
+                  <span class="sub-folder">{{ subSection }}</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

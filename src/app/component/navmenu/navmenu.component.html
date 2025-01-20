@@ -1,0 +1,28 @@
+<!-- <div class="header">
+  <h2>Example Project</h2>
+</div>
+<div class="header-menu">
+  <nav>
+    <ul>
+      <li 
+        *ngFor="let nav of navItems" 
+        (click)="setActive(nav)" 
+        [ngClass]="{'active': activeNav === nav}" 
+        style="cursor: pointer;">
+        {{nav}}
+      </li>
+    </ul>
+  </nav>
+</div> -->
+
+<div class="header-menu">
+  <nav>
+    <ul>
+      <li *ngFor="let nav of navItems" 
+          [ngClass]="{'active': activeNav === nav}" 
+          (click)="setActive(nav)">
+        {{ nav }}
+      </li>
+    </ul>
+  </nav>
+</div>

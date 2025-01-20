@@ -1,0 +1,37 @@
+<div class="body">
+    <main>
+      <header>
+        <p class="heading">Test Suites & Cases</p>
+        <div class="menu">
+          <i class="fa-solid fa-table-list"></i>
+          <i class="fa-solid fa-rectangle-list"></i>
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </header>
+  
+      <article id="open" *ngFor="let s of testSuites">
+        <div class="checkbox">
+          <div>
+            <!-- <input type="checkbox" name="open1" id="open1" /> -->
+            <i class="fa-solid fa-flag"></i>
+            <div class="open" id="open1">
+              <p class="heading">
+                <a routerLink="/pages/add-test-case" class="testsuites__custom-link">{{ s.name }}</a>
+              </p>
+              <p>
+                <a class="testsuites__custom-link blue">Run Test</a> | <a class="testsuites__custom-link blue">Test Runs</a> |
+                <a class="testsuites__custom-link blue" (click)="addTestSuite(s)">Edit</a>
+              </p>
+              <p>
+                {{s.description}} <b>{{s.testRunsAmount}}</b> active test runs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <aside>
+      <button type="button" class="btn" (click)="addTestSuite()">+ Add Test Suite</button>
+      <p><b>1</b> test suite and <b>2784</b> cases in this project.</p>
+    </aside>
+  </div>

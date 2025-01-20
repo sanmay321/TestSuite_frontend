@@ -1,0 +1,97 @@
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #234a6b;
+  color: white;
+  height: fit-content;
+  padding: 15px 10px;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    font-style: italic;
+    font-family: system-ui;
+  }
+
+  nav {
+    a {
+      margin: 0 10px;
+      text-transform: none;
+      text-decoration: none;
+      color: white;
+      font-size: large;
+    }
+    a:hover {
+      text-decoration: underline; 
+    }
+    a.active-nav {
+      color: #ffb05a;
+      font-weight: bold;
+      border-bottom: 2px solid #ffb05a;
+      pointer-events: none;
+    }
+    
+    a.active-nav:hover {
+      color: #ffb05a;
+      cursor: none;
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+
+.home-main {
+  padding: 1rem;
+}
+
+
+
+/*------------ Contact US------------*/
+
+.contactBox {
+  display: flex;
+  gap: 15px;
+}
+
+.contactBox iframe,
+.contactBox form {
+  width: 50%;
+  border-radius: 20px;
+  background-color: lightgray;
+  border: solid lightgray 2px;
+}
+
+.contactBox form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactBox input,
+.contactBox textarea {
+  border: 1px solid lightgray;
+  height: 30px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.contactBox textarea {
+  height: 150px;
+}
+
+.contactBox button {
+  background-color: rgba(1, 255, 9, 0.599);
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+input:focus,
+textarea:focus {
+  border: solid black 1px;
+}

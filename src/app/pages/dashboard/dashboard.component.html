@@ -1,0 +1,111 @@
+<!-- <p>dashboard works!</p> -->
+<div class="dashboard-main">
+  <p class="header-dash">Dashboard</p>
+  <p>Testsuite / <span class="title-nav">Dashboard</span></p>
+</div>
+ <div style="padding: 0 1rem;">
+    <div class="card-div">
+        <div *ngFor="let el of [1,2,3,4]">
+            <mat-card>
+                <mat-card-content class="card-body">
+                  <div class="partition-upper">
+                    <div class="first-partition">
+                      <p class="tag">ORDERS</p>
+                      <h3>$1,587</h3>
+                      <p class="note"><span>+11%</span> From previous period</p>
+                    </div>
+                    <div>
+                      <i class="fa-light fa-layer-group"></i>
+                    </div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+        </div>
+    </div>
+
+    <div class="card2-div">
+        <div>
+            <mat-card >
+              <mat-card-content>
+                <h5 class="card-title">Sales Statistics</h5>
+                <app-stacked-bar-chart></app-stacked-bar-chart>
+              </mat-card-content>
+              
+              </mat-card>
+        </div>
+        <div>
+            <mat-card >
+              <mat-card-content>
+                <h5 class="card-title">Trends Monthly</h5>
+                <app-doughnut-chart></app-doughnut-chart>
+              </mat-card-content>
+              
+              </mat-card>
+        </div>
+    </div>
+
+    <div class="card3-div">
+        <div>
+            <mat-card >
+                <mat-card-content>
+                <h3>Inbox</h3>
+                <div class="lower-left-card" *ngFor="let el of [1,2,3,4,5]">
+                  <div class="profile-data">
+                    <div>
+                      <img src="../../../assets/images/profile-demo.png" width="60px"/>
+                    </div>
+                    <div class="data-p">
+                      <p class="name">Chadengle</p>
+                      <p class="bio">Hey! there I'm available...</p>
+                    </div>
+                    
+                  </div>
+                  <div>
+                    <p class="time-p">11:40 PM</p>
+                  </div>
+                </div> 
+                </mat-card-content>
+              </mat-card>
+        </div>
+        <div class="progress-cards">
+          <mat-card class="progress-card" *ngFor="let el of [1,2,3]">
+              <mat-card-content>
+              <h4>Sales Statistics</h4>
+              <p><span>iMacs</span><span>40%</span></p>
+              <div class="lower-left-card">
+                <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+              </div> 
+              </mat-card-content>
+            </mat-card>
+      </div>
+      <div class="table-cards">
+        <mat-card class="table-card">
+            <mat-card-content>
+            <h4>Top Contracts</h4>
+            <div>
+              <table>
+                <tr>
+                  <th>Company</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Status</th>
+                </tr>
+                <tr *ngFor="let el of [1,2,3,4,5]">
+                  <td>Apple Technology</td>
+                  <td>20/02/2014</td>
+                  <td>19/02/2020</td>
+                  <td><span>Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Apple Technology</td>
+                  <td>20/02/2014</td>
+                  <td>19/02/2020</td>
+                  <td><span style="background: #ff5d48;;">Unpaid</span></td>
+                </tr>
+              </table>
+            </div> 
+            </mat-card-content>
+          </mat-card>
+    </div>
+    </div>
+ </div>

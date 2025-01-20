@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <span class="logo">TESTSUITE</span>
+  <span class="spacer"></span>
+  <nav>
+    <a 
+      *ngFor="let nav of navTags" 
+      mat-button 
+      (click)="redirect(nav.route)" 
+      [ngClass]="{'active-nav': routerTag === nav.route}" 
+      style="cursor: pointer;">
+      {{nav.name}}
+    </a>
+  </nav>
+</mat-toolbar>
+
+<div>
+    <div class="home-main">
+        <app-about *ngIf="routerTag === 'about'"></app-about>
+        <app-pricing *ngIf="routerTag === 'pricing'"></app-pricing>
+        <app-contact-us *ngIf="routerTag === 'contact'"></app-contact-us>
+        <!-- <app-add-test-case *ngIf="routerTag === 'add-test-case'" ></app-add-test-case> -->
+    </div>
+</div>
+<app-footer></app-footer>

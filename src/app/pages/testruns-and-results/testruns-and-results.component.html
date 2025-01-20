@@ -1,0 +1,307 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="stylesheet" href="../Multimedia/style1.css" />
+    <script
+      src="https://kit.fontawesome.com/644ef17f85.js"
+      crossorigin="anonymous"
+    ></script>
+  </head> -->
+  <div class="body">
+    <main>
+      <header>
+        <p class="heading">Test Runs & Results</p>
+        <div class="menu">
+          <select name="item" id="item">
+            <option value="defects" selected>Defects</option>
+          </select>
+          <i class="fa-solid fa-table-list"></i>
+          <i class="fa-solid fa-rectangle-list"></i>
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </header>
+
+      <article id="open">
+        <div class="checkbox">
+          <p class="heading">Open</p>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="all" id="all" />
+            <label for="all">Select All</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="open1" id="open1" />
+            <i
+              class="fa-solid fa-circle-play fa-2xl"
+              style="color: #5d2cef"
+            ></i>
+            <div class="open" id="open1">
+              <p class="heading"><a class="tests-and-results__custom-link" routerLink="/pages/test-execution">XYZ project</a></p>
+              <p>By Isht S. on 7/23/2024 | <a class="tests-and-results__custom-link blue" (click)="openAddTestRun('run', {name: 'XYZ project', description: 'By Isht S. on 7/23/2024'})">Edit</a></p>
+              <p>
+                511 Passed, 7 Failed, 0 Incomplete, 0 Obsolete and 0 Not
+                Executed.
+              </p>
+            </div>
+          </div>
+          <div class="checkbox-right">
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <p>90%</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="open1" id="open1" />
+            <i
+              class="fa-solid fa-circle-play fa-2xl"
+              style="color: #5d2cef"
+            ></i>
+            <div class="open" id="open1">
+              <p class="heading"><a class="tests-and-results__custom-link" routerLink="/pages/test-execution">XYZ project</a></p>
+              <p>By Vidit S. on 6/19/2024 | <a class="tests-and-results__custom-link blue" (click)="openAddTestRun('run', {name: 'XYZ project', description: 'By Vidit S. on 6/19/2024'})">Edit</a></p>
+              <p>
+                11 Passed, 33 Failed, 0 Incomplete, 0 Obsolete and 0 Not
+                Executed.
+              </p>
+            </div>
+          </div>
+          <div class="checkbox-right">
+            <div class="progress-bar">
+              <div class="progress1"></div>
+            </div>
+            <p>25%</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+      </article>
+
+      <article id="completed">
+        <div class="checkbox">
+          <p class="heading">Completed</p>
+          <p class="pagination">
+            <span class="pagination-prev" (click)="prevPage()">&lt;&lt; Prev</span>
+            <span class="pagination-pages">
+              <span class="pagination-page" *ngFor="let n of pages" [class.active]="page === n" (click)="toPage(n)">{{n}}</span>
+            </span>
+            <span class="pagination-next" (click)="nextPage()"> Next&gt;&gt;</span>
+          </p>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete1" id="complete1" />
+            <label for="complete1">July 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete2" id="complete2" />
+            <label for="complete2">v2024.6</label>
+          </div>
+          <div class="checkbox-right">
+            <p>7/23/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete3" id="complete3" />
+            <label for="complete3">June 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete4" id="complete4" />
+            <label for="complete4">v2024.5</label>
+          </div>
+          <div class="checkbox-right">
+            <p>6/25/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete5" id="complete5" />
+            <label for="complete5">May 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete6" id="complete6" />
+            <label for="complete6">v2024.4</label>
+          </div>
+          <div class="checkbox-right">
+            <p>5/27/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete1" id="complete1" />
+            <label for="complete1">July 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete2" id="complete2" />
+            <label for="complete2">v2024.6</label>
+          </div>
+          <div class="checkbox-right">
+            <p>7/23/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete3" id="complete3" />
+            <label for="complete3">June 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete4" id="complete4" />
+            <label for="complete4">v2024.5</label>
+          </div>
+          <div class="checkbox-right">
+            <p>6/25/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete5" id="complete5" />
+            <label for="complete5">May 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete6" id="complete6" />
+            <label for="complete6">v2024.4</label>
+          </div>
+          <div class="checkbox-right">
+            <p>5/27/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete1" id="complete1" />
+            <label for="complete1">July 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete2" id="complete2" />
+            <label for="complete2">v2024.6</label>
+          </div>
+          <div class="checkbox-right">
+            <p>7/23/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete3" id="complete3" />
+            <label for="complete3">June 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete4" id="complete4" />
+            <label for="complete4">v2024.5</label>
+          </div>
+          <div class="checkbox-right">
+            <p>6/25/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete5" id="complete5" />
+            <label for="complete5">May 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete6" id="complete6" />
+            <label for="complete6">v2024.4</label>
+          </div>
+          <div class="checkbox-right">
+            <p>5/27/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete1" id="complete1" />
+            <label for="complete1">July 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete2" id="complete2" />
+            <label for="complete2">v2024.6</label>
+          </div>
+          <div class="checkbox-right">
+            <p>7/23/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete3" id="complete3" />
+            <label for="complete3">June 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete4" id="complete4" />
+            <label for="complete4">v2024.5</label>
+          </div>
+          <div class="checkbox-right">
+            <p>6/25/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete5" id="complete5" />
+            <label for="complete5">May 2024</label>
+          </div>
+        </div>
+        <div class="checkbox">
+          <div>
+            <input type="checkbox" name="complete6" id="complete6" />
+            <label for="complete6">v2024.4</label>
+          </div>
+          <div class="checkbox-right">
+            <p>5/27/2024</p>
+            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
+          </div>
+        </div>
+      </article>
+    </main>
+    <aside>
+      <button type="button" class="btn" (click)="openAddTestRun('run')">+ Add Test Run</button>
+      <button type="button" class="btn" (click)="openAddTestRun('plan')">+ Add Test Plan</button>
+      <p><b>2</b> open and <b>184</b> completed test runs in this project.</p>
+      <label for="groupBy">Group By</label>
+      <select name="item" id="item">
+        <option value="" selected></option>
+        <option value="owner">Owner</option>
+      </select>
+      <label for="orderBy">Order By</label>
+      <select name="orderBy" id="orderBy">
+        <option value="date" selected>Date</option>
+      </select>
+    </aside>
+</div>
+<!-- </html> -->

@@ -1,0 +1,53 @@
+:host {
+  --primary-color: #234a6b;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  color: white;
+
+  padding: 10px;
+}
+
+.header-menu {
+  background: #234a6b;
+  color: white;
+  padding: 10px;
+}
+
+.header-menu nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around; /* Distribute items evenly */
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.header-menu nav ul li {
+  margin: 0 10px;
+  padding: 5px 10px;
+  color: rgb(234, 226, 226);
+  cursor: pointer;
+}
+
+.header-menu nav ul li:hover {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.header-menu nav ul li.active {
+  color: white;
+  border-radius: 4px;
+  border-bottom: 2px solid white;
+}

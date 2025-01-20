@@ -1,0 +1,80 @@
+.pricing-header {
+    text-align: center;
+}
+.title-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-body {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-content: space-between;
+    // .first-card {
+
+    // }
+    mat-card-header {
+        border-bottom: 1px solid #c4c6d0;
+    }
+
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    mat-card-content {
+        padding: 15px 3rem;
+    }
+
+    .dollar {
+        .dollar-header {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: xxx-large;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0;
+
+            span {
+                font-size: xx-large;
+            }
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .card-list {
+            padding-left: 15px;
+        }
+
+        hr {
+            width: 70%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .action-btns {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+
+        button {
+            width: 30%;
+            padding: 10px;
+            font-size: larger;
+            border-radius: 10rem;
+        }
+
+        button:hover {
+            color: #FFFFFF;
+        }
+    }
+}

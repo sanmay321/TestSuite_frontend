@@ -1,0 +1,109 @@
+.body {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    padding: 14px 0 0 14px;
+    height: 87%;
+}
+
+header {
+    border-bottom: 1px lightblue solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    margin-top: -0.5rem;
+}
+
+.testsuites {
+
+    &__custom-link {
+        &_blue {
+            color: rgba($color: rgb(98, 163, 212), $alpha: 1.0);
+        }
+    }
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+article>div:nth-of-type(n + 1) {
+    background-color: white;
+}
+
+article>div {
+    padding: 0.5rem;
+}
+
+article>div>p.heading {
+    border-bottom: 1px lightblue solid;
+    margin-bottom: 0px;
+    padding-bottom: 0.25rem;
+}
+
+/* .open {
+    display: inline-block;
+    vertical-align: middle;
+  } */
+
+/* partition--- left----*/
+
+aside {
+    padding: 0.5rem 1rem;
+    background-color: rgb(193, 217, 226);
+    // height: 95vh;
+    border: 1px rgb(94, 162, 184) solid;
+    margin-top: -0.5rem;
+    margin: 0;
+    margin-left: 1rem;
+
+    position: sticky;
+    top: 8px;
+}
+
+aside button {
+    outline: none;
+    background-color: rgb(33, 33, 149);
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.checkbox>div {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 5rem;
+    background-color: red;
+    height: 1rem;
+}
+
+.progress {
+    background-color: green;
+    width: 90%;
+    height: 100%;
+}
+
+article div p {
+    margin: 0px;
+}
+
+#completed>div:nth-of-type(2n + 2) {
+    text-decoration: underline;
+}
