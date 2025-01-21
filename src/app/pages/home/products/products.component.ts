@@ -9,7 +9,7 @@ export class ProductsComponent {
   products = [
     {
       image: 'assets/images/product2.jpg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'Ebook',
       title: "The QA Lead's Guide to Agile Testing",
       description:
@@ -17,7 +17,7 @@ export class ProductsComponent {
     },
     {
       image: 'assets/images/product3.jpeg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'Report',
       title: 'Software Testing & Quality Report: Third Edition',
       description:
@@ -25,7 +25,7 @@ export class ProductsComponent {
     },
     {
       image: 'assets/images/product1.jpg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'On-Demand Webinar',
       title: 'Testing in Regulated Industries',
       description:
@@ -33,7 +33,7 @@ export class ProductsComponent {
     },
     {
       image: 'assets/images/product2.jpg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'Guide',
       title: 'Effective QA Strategies for Agile Teams',
       description:
@@ -41,7 +41,7 @@ export class ProductsComponent {
     },
     {
       image: 'assets/images/product3.jpeg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'Toolkit',
       title: 'QA Toolkit for Startups',
       description:
@@ -49,7 +49,7 @@ export class ProductsComponent {
     },
     {
       image: 'assets/images/product1.jpg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'On-Demand Webinar',
       title: 'Testing in Regulated Industries',
       description:
@@ -57,7 +57,7 @@ export class ProductsComponent {
     },
     {
       image: 'assets/images/product2.jpg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'Guide',
       title: 'Effective QA Strategies for Agile Teams',
       description:
@@ -65,7 +65,7 @@ export class ProductsComponent {
     },
     {
       image: 'assets/images/product3.jpeg',
-      icon: 'assets/images/profile-demo.png',
+      icon: 'assets/images/DottedTriangleArrow.svg',
       category: 'Toolkit',
       title: 'QA Toolkit for Startups',
       description:
