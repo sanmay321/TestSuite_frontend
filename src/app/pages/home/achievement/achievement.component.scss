@@ -1,0 +1,41 @@
+.achievements {
+    background-color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .achievements h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .achievement-container {
+    display: flex; /* Horizontal layout */
+    justify-content: center;
+    gap: 100px; /* Spacing between items */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  }
+  
+  .achievement-item {
+    display: flex; /* Horizontal alignment of number and description */
+    align-items: center; /* Align numbers and text vertically */
+    gap: 20px; /* Space between number and description */
+    max-width: 400px; /* Limit the width of each item */
+    text-align: left;
+  }
+  
+  .percentage {
+    font-size: 80px; /* Large percentage size */
+    font-weight: bold;
+    color: purple;
+    flex-shrink: 0; /* Prevent percentage from shrinking */
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    word-wrap: break-word;
+    max-width: 200px; /* Smaller text width */
+  }

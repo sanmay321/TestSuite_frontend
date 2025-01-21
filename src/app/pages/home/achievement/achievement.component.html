@@ -1,0 +1,9 @@
+<div class="achievements">
+    <h2>More Coverage. Less Work.</h2>
+    <div class="achievement-container">
+      <div class="achievement-item" *ngFor="let achievement of achievements">
+        <span class="percentage" [attr.data-target]="achievement.target">{{ achievement.value }}%</span>
+        <p class="description">{{ achievement.description }}</p>
+      </div>
+    </div>
+  </div>

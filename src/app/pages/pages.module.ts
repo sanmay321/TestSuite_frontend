@@ -25,6 +25,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AddTestCaseComponent } from "../add-test-case/add-test-case.component";
 import { MarqueeComponent } from './home/marquee/marquee.component';
 import { DragScrollComponent, DragScrollItemDirective } from 'ngx-drag-scroll';
+import { AchievementComponent } from './home/achievement/achievement.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DragScrollComponent, DragScrollItemDirective } from 'ngx-drag-scroll';
     AboutComponent,
     PricingComponent,
     ContactUsComponent,
-    MarqueeComponent
+    MarqueeComponent,
+    AchievementComponent
   ],
   imports: [
     CommonModule,
