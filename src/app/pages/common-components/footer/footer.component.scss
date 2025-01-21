@@ -1,37 +1,36 @@
 footer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Create four equal-width columns */
-  gap: 2rem; /* Add spacing between columns */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 1rem;
   background-color: white;
   color: black;
-  padding: 2rem 5rem 2rem 5rem;
-
+  padding: 1rem 6rem 2rem 6rem;
 
   .footMenu {
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: flex-start; /* Align text to the left */
+    flex-direction: column;
+    align-items: flex-start;
 
     .heading {
-      font-size: 1.2rem; /* Larger and bold for headings */
+      font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 1rem;
     }
 
     ul {
-      list-style: none; /* Remove bullet points */
+      list-style: none;
       padding: 0;
       margin: 0;
 
       li {
-        font-size: 1rem; /* Normal font size for list items */
+        font-size: 1rem;
         margin: 0.5rem 0;
         cursor: pointer;
-        position: relative; /* For underline animation */
+        position: relative;
         transition: color 0.3s ease;
 
         &:hover {
-          color: grey; /* Subtle color change on hover */
+          color: grey;
         }
 
         &::after {
@@ -41,49 +40,58 @@ footer {
           bottom: -2px;
           width: 0;
           height: 2px;
-          background-color: black; /* Underline color */
+          background-color: black;
           transition: width 0.3s ease-out;
         }
 
         &:hover::after {
-          width: 100%; /* Expand underline to match text width */
+          width: 100%;
         }
       }
     }
-  }
 
-  button {
-    width: 100%;
-    background-color: #9261c6;
-    color: black;
-    font-size: 1rem;
-    padding: 0.75rem 0.5rem;
-    font-weight: bold;
-    border-radius: 2rem;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: transparent; /* Transparent on hover */
-      border: 2px solid #9261c6; /* Purple border for hover */
-    }
-  }
-
-  .footNav {
-    display: flex;
-    justify-content: space-between; /* Distribute icons evenly */
-    gap: 1rem;
-    margin-top: 1.5rem;
-
-    a {
+    button {
+      width: 100%;
+      background-color: #9261c6;
       color: black;
-      text-decoration: none;
-      font-size: 1.5rem; /* Icon size */
-      transition: color 0.3s ease;
+      font-size: 1rem;
+      padding: 0.75rem 0.5rem;
+      font-weight: bold;
+      border-radius: 2rem;
+      border: none;
+      outline: none;
+      transition: background-color 0.3s ease;
 
       &:hover {
-        color: grey; /* Subtle hover effect */
+        background-color: transparent;
+        border: 2px solid #9261c6;
+      }
+    }
+
+    .footNav {
+      display: flex;
+      justify-content: center; /* Center the icons */
+      gap: 1rem; /* Space between icons */
+      margin-top: 1rem; /* Add spacing between the button and icons */
+      width: 100%; /* Ensure the icons span the full width */
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: grey;
+        }
+
+        .icon {
+          width: 24px;
+          height: 24px;
+        }
       }
     }
   }
