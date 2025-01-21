@@ -52,8 +52,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     PagesModule,
     ReactiveFormsModule,
-    RouterModule
-  
+    RouterModule,
 
 
 

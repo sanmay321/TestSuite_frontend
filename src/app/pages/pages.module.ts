@@ -23,6 +23,8 @@ import { StackedBarChartComponent } from "./charts/stacked-bar-chart/stacked-bar
 import { DoughnutChartComponent } from "./charts/doughnut-chart/doughnut-chart.component";
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AddTestCaseComponent } from "../add-test-case/add-test-case.component";
+import { MarqueeComponent } from './home/marquee/marquee.component';
+import { DragScrollComponent, DragScrollItemDirective } from 'ngx-drag-scroll';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { AddTestCaseComponent } from "../add-test-case/add-test-case.component";
     HomeComponent,
     AboutComponent,
     PricingComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    MarqueeComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +53,10 @@ import { AddTestCaseComponent } from "../add-test-case/add-test-case.component";
     DoughnutChartComponent,
     MatProgressBarModule,
     AddTestCaseComponent,
+    DragScrollComponent,
+    DragScrollItemDirective,
 ],
+bootstrap: [ MarqueeComponent ],
   // exports: [StackedBarChartComponent],
   providers: [provideCharts(withDefaultRegisterables())],
 })
