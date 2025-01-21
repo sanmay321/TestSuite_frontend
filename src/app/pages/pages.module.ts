@@ -26,6 +26,8 @@ import { AddTestCaseComponent } from "../add-test-case/add-test-case.component";
 import { MarqueeComponent } from './home/marquee/marquee.component';
 import { DragScrollComponent, DragScrollItemDirective } from 'ngx-drag-scroll';
 import { AchievementComponent } from './home/achievement/achievement.component';
+import { ProductsComponent } from './home/products/products.component';
+import { ProductsCardComponent } from './common-components/cards/products-card/products-card.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { AchievementComponent } from './home/achievement/achievement.component';
     PricingComponent,
     ContactUsComponent,
     MarqueeComponent,
-    AchievementComponent
+    AchievementComponent,
+    ProductsCardComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,

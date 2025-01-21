@@ -1,0 +1,17 @@
+<div class="products-section">
+    <h2>Beyond the product</h2>
+    <div class="carousel">
+      <button class="arrow left-arrow" (click)="scrollLeft()">&larr;</button>
+      <div class="carousel-track">
+        <app-products-card
+          *ngFor="let product of products"
+          [image]="product.image"
+          [icon]="product.icon"
+          [category]="product.category"
+          [title]="product.title"
+          [description]="product.description"
+        ></app-products-card>
+      </div>
+      <button class="arrow right-arrow" (click)="scrollRight()">&rarr;</button>
+    </div>
+  </div>
