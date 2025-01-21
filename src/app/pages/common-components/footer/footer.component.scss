@@ -1,48 +1,90 @@
 footer {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: space-between;
-    background-color: #234a6b;
-    color: beige;
-    margin: 1rem;
-    padding: 1rem;
-  }
-  
-  footer button {
-    width: 100%;
-    background-color: #ffb05a;
-    color: #234a6b;
-    font-size: 1rem;
-    padding: 0.75rem 0.5rem;
-    font-weight: bolder;
-    border-radius: 2rem;
-    outline: none;
-  }
-  
-  .footNav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create four equal-width columns */
+  gap: 2rem; /* Add spacing between columns */
+  background-color: white;
+  color: black;
+  padding: 2rem 5rem 2rem 5rem;
+
+
+  .footMenu {
     display: flex;
-    justify-content: space-around;
-    margin-top: 1.5rem;
-  }
-  
-  .footNav a {
-    color: #ffb05a;
-    text-decoration: none;
-  }
-  
-  footer p:hover {
-    color: grey;
-  }
-  
-  .footNav a:hover {
-    color: gold;
-  }
-  
-  footer button:hover {
-    background-color: gold;
+    flex-direction: column; /* Align items vertically */
+    align-items: flex-start; /* Align text to the left */
+
+    .heading {
+      font-size: 1.2rem; /* Larger and bold for headings */
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none; /* Remove bullet points */
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 1rem; /* Normal font size for list items */
+        margin: 0.5rem 0;
+        cursor: pointer;
+        position: relative; /* For underline animation */
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: grey; /* Subtle color change on hover */
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 0;
+          height: 2px;
+          background-color: black; /* Underline color */
+          transition: width 0.3s ease-out;
+        }
+
+        &:hover::after {
+          width: 100%; /* Expand underline to match text width */
+        }
+      }
+    }
   }
 
-  .footMenu p{
-    cursor: pointer;
+  button {
+    width: 100%;
+    background-color: #9261c6;
+    color: black;
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: transparent; /* Transparent on hover */
+      border: 2px solid #9261c6; /* Purple border for hover */
+    }
   }
-  
+
+  .footNav {
+    display: flex;
+    justify-content: space-between; /* Distribute icons evenly */
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.5rem; /* Icon size */
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: grey; /* Subtle hover effect */
+      }
+    }
+  }
+}
