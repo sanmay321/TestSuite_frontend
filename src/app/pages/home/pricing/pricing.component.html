@@ -1,112 +1,46 @@
 <div class="pricing-main">
     <div class="pricing-header">
-        <div>
-            <label style="margin-right: 10px;">How many users are on your team?</label>
-            <input value="1" />
-        </div>
-        <div class="title-two">
-            <p style="margin-right: 1rem;">How often would you like to be billed?</p>
-            <input type="radio" id="annually" name="fav_language" value="Annually">
-            <label style="margin-right: 1rem;" for="annually">Annually</label>
-            <input type="radio" id="monthly" name="fav_language" value="Monthly">
-            <label style="margin-right: 1rem;" for="monthly">Monthly</label>
-            <!-- checkbox -->
-            <p style="font-size: 15px; font-style: italic;">Get 1 month free with annual billing!</p>
-        </div>
+      <div>
+        <label for="users">How many users are on your team?</label>
+        <input id="users" type="number" value="1" />
+      </div>
+      <div class="title-two">
+        <p>How often would you like to be billed?</p>
+        <input type="radio" id="annually" name="billing" value="Annually" checked />
+        <label for="annually">Annually</label>
+        <input type="radio" id="monthly" name="billing" value="Monthly" />
+        <label for="monthly">Monthly</label>
+        <p class="note">Get 1 month free with annual billing!</p>
+      </div>
     </div>
-
     <div class="pricing-body">
-        <div class="first-card">
-            <mat-card appearance="outlined">
-                <mat-card-header>
-                    <h2>Professional Cloud</h2>
-                </mat-card-header>
-                <mat-card-content>
-                    <div class="dollar">
-                        <div class="dollar-header">
-                            <h1><span>$</span>408</h1>
-                            <p>per year</p>
-                            <p>1 user</p>
-                        </div>
-                        <hr>
-                        <div>
-                            <h3>The standard in test management</h3>
-                            <ul class="card-list">
-                                <li>
-                                    Unlimited projects
-                                </li>
-                                <li>
-                                    Test cases and suites
-                                </li>
-                                <li>
-                                    Test runs, plans, and milestones
-                                </li>
-                                <li>
-                                    Defect and requirements integrations
-                                </li>
-                                <li>
-                                    Traceability and coverage reporting
-                                </li>
-                                <li>
-                                    TestRail API
-                                </li>
-                            </ul>
-                            <div class="action-btns">
-                                <button>Try Now</button>
-                                <button>Get a Quote</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div></div>
-                    <div></div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="second-card">
-            <mat-card appearance="outlined">
-                <mat-card-header>
-                    <h2>Enterprise Cloud</h2>
-                </mat-card-header>
-                <mat-card-content>
-                    <div class="dollar">
-                        <div class="dollar-header">
-                            <h1><span>$</span>826</h1>
-                            <p>per year</p>
-                            <p>1 user</p>
-                        </div>
-                        <hr>
-                        <div>
-                            <h3>All the benefits of Professional, plus:</h3>
-                            <ul class="card-list">
-                                <li>
-                                    Single sign-on (SSO)
-                                </li>
-                                <li>
-                                    Advanced auditing
-                                </li>
-                                <li>
-                                    Test case version control & approvals
-                                </li>
-                                <li>
-                                    Test parameterization
-                                </li>
-                                <li>
-                                    Project admin permissions
-                                </li>
-                                <li>
-                                    Priority support
-                                </li>
-                            </ul>
-                            <div class="action-btns">
-                                <button>Try Now</button>
-                                <button>Get a Quote</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div></div>
-                    <div></div>
-                </mat-card-content>
-            </mat-card>
-        </div>
+      <app-pricing-card
+        title="Professional Cloud"
+        [price]="408"
+        users="1"
+        subtitle="The standard in test management"
+        [benefits]="[
+          'Unlimited projects',
+          'Test cases and suites',
+          'Test runs, plans, and milestones',
+          'Defect and requirements integrations',
+          'Traceability and coverage reporting',
+          'TestRail API'
+        ]"
+      ></app-pricing-card>
+      <app-pricing-card
+        title="Enterprise Cloud"
+        [price]="826"
+        users="1"
+        subtitle="All the benefits of Professional, plus:"
+        [benefits]="[
+          'Single sign-on (SSO)',
+          'Advanced auditing',
+          'Test case version control & approvals',
+          'Test parameterization',
+          'Project admin permissions',
+          'Priority support'
+        ]"
+      ></app-pricing-card>
     </div>
-</div>
+  </div>

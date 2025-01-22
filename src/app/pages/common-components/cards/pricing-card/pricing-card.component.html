@@ -1,0 +1,25 @@
+<mat-card class="pricing-card">
+    <mat-card-header>
+      <h2>{{ title }}</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="pricing-details">
+        <div class="price">
+          <h1><span>$</span>{{ price }}</h1>
+          <p>per year</p>
+          <p>{{ users }} user</p>
+        </div>
+        <hr />
+        <div class="benefits">
+          <h3>{{ subtitle }}</h3>
+          <ul class="card-list">
+            <li *ngFor="let benefit of benefits">{{ benefit }}</li>
+          </ul>
+          <div class="action-btns">
+            <button class="try-btn">Try Now</button>
+            <button class="quote-btn">Get a Quote</button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>

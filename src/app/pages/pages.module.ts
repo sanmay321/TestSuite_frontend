@@ -28,6 +28,7 @@ import { DragScrollComponent, DragScrollItemDirective } from 'ngx-drag-scroll';
 import { AchievementComponent } from './home/about/achievement/achievement.component';
 import { ProductsComponent } from './home/about/products/products.component';
 import { ProductsCardComponent } from './common-components/cards/products-card/products-card.component'
+import { PricingCardComponent } from './common-components/cards/pricing-card/pricing-card.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ProductsCardComponent } from './common-components/cards/products-card/p
     MarqueeComponent,
     AchievementComponent,
     ProductsCardComponent,
-    ProductsComponent
+    ProductsComponent,
+    PricingCardComponent
   ],
   imports: [
     CommonModule,
