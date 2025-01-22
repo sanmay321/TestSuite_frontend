@@ -1,41 +1,54 @@
 .pricing-main {
     margin-bottom: 4rem;
+  
     .pricing-header {
-      align-items: left;
-      justify-items: left;
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center-align content */
       text-align: left;
       margin-bottom: 2rem;
-      margin-left: 25%;
+      
+  
+      div {
+        margin-bottom: 1rem; /* Add spacing between sections */
+        
+      }
   
       label {
-        margin-right: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
       }
   
       input[type='number'] {
-        width: 50px;
+        width: 60px; /* Increase width for better visibility */
         text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 0.25rem;
       }
   
       .title-two {
         display: flex;
-        align-items: center; /* Vertically align items */
-        justify-content: flex-start; /* Align items to the left */
-        flex-wrap: nowrap; /* Ensure everything stays in one line */
-        gap: 1rem; /* Add spacing between items */
-      
+        align-items: center;
+        justify-content: center; /* Center elements */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        gap: 1rem;
+  
         p {
-          margin: 0; /* Remove default paragraph margins */
+            font-size: 1rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
-      
+  
         .note {
           font-size: 0.9rem;
           font-style: italic;
           color: #555;
-          white-space: nowrap; /* Prevent the note from breaking into a new line */
         }
-      
+  
         input[type='radio'] {
-          margin-right: 0.5rem; /* Add spacing between radio button and label */
+          margin-right: 0.25rem;
         }
       }
     }
@@ -45,5 +58,35 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       justify-items: center;
+  
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .pricing-header {
+        align-items: center;
+        text-align: center;
+  
+        .title-two {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .pricing-header {
+        input[type='number'] {
+          width: 50px; /* Adjust input size for small screens */
+        }
+  
+        .title-two {
+          .note {
+            font-size: 0.8rem;
+          }
+        }
+      }
     }
   }

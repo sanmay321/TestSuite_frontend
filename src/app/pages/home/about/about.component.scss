@@ -1,67 +1,89 @@
 #about {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  
-    justify-content: space-between;
-  }
-  
-  /* #about > div {
-      color: white;
-      background-color: #234a6b;
-      width: 80%;
-    } */
-  
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr; /* Two columns layout for larger screens */
+  gap: 1rem;
+  justify-content: space-between;
+
   .first-section,
   .second-section {
     color: black;
-    // background: url("../../../../assets/images/banner.jpeg") no-repeat center / cover;
     background-color: white;
-    padding: 2rem 1.5rem 2rem 2rem;
+    padding: 2rem 1.5rem;
     margin-top: 2rem;
   }
-  
-  #about .heading {
+
+  .heading {
     font-size: 2.5rem;
-    padding: none;
     margin: 0;
   }
-  
+
   button.demo {
     border-radius: 20px;
     width: 40%;
     height: 2.5rem;
     font-weight: bold;
     outline: none; 
-    margin: 0%;
     border: 1px solid #9261c6;
   }
-  
+
   #testSuite {
-    // margin-left: 2rem;
     background-color: #9261c6;
     color: black;
   }
 
   #testSuite:hover {
     background-color: transparent;
+    color: #9261c6;
   }
-  
+
   #watchDemo {
     margin-left: 2rem;
     background-color: transparent;
     color: black;
   }
+
   #watchDemo:hover {
     background-color: #9261c6;
+    color: black;
   }
-  
+
   .second-section {
     text-align: center;
   }
-  
-  .third-section,
-  .fourth-section {
-    grid-column: 1 / span 2;
+
+  @media (max-width: 768px) {
+    /* Stack sections vertically on smaller screens */
+    grid-template-columns: 1fr; /* Single column layout */
+    .first-section,
+    .second-section {
+      margin-top: 1rem;
+      padding: 1.5rem;
+    }
+
+    .heading {
+      font-size: 2rem; /* Adjust heading size for smaller screens */
+      text-align: center;
+    }
+
+    button.demo {
+      width: 80%; /* Buttons take more width on smaller screens */
+      margin-bottom: 1rem; /* Add spacing between buttons */
+    }
+
+    #watchDemo {
+      margin-left: 0; /* Remove margin for better stacking */
+    }
   }
+
+  @media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .heading {
+      font-size: 1.5rem; /* Reduce heading size */
+    }
+
+    button.demo {
+      width: 100%; /* Full width buttons */
+    }
+  }
+}

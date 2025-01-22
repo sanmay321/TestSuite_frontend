@@ -1,50 +1,85 @@
 .products-section {
-    text-align: left;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .products-section h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #333;
-  }
-  
-  .carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the carousel */
-  }
-  
-  .carousel-track {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-    width: 80%; /* Show only 3 cards at a time */
-    scroll-behavior: smooth;
-  }
-  
-  .arrow {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-    z-index: 10;
-  }
-  
-  .arrow:focus {
+  text-align: left;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.products-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the carousel */
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  width: 80%; /* Show only 3 cards at a time */
+  scroll-behavior: smooth;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+
+  &:focus {
     outline: none;
   }
-  
+}
+
+.left-arrow {
+  position: absolute;
+  left: 40px; /* Adjust for larger screens */
+}
+
+.right-arrow {
+  position: absolute;
+  right: 40px; /* Adjust for larger screens */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .carousel-track {
+    width: 90%; /* Allow full width on very small screens */
+    gap: 10px; /* Reduce spacing between cards */
+    width: 89%; /* Show only 3 cards at a time */
+  }
+
   .left-arrow {
     position: absolute;
-    left: 40px;
+    left: 5px; /* Keep arrows inside the container on smaller screens */
   }
-  
+
   .right-arrow {
     position: absolute;
-    right: 40px;
+    right: 5px; /* Keep arrows inside the container on smaller screens */
   }
+}
+
+@media (max-width: 480px) {
+  .carousel-track {
+    width: 85%; /* Allow full width on very small screens */
+    gap: 10px; /* Reduce spacing between cards */
+    width: 89%; /* Show only 3 cards at a time */
+  }
+
+  .left-arrow {
+    left: -10px; /* Adjust arrow position for very small screens */
+  }
+
+  .right-arrow {
+    right: -10px; /* Adjust arrow position for very small screens */
+  }
+}

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent {
+export class ProductsComponent implements AfterViewInit{
   products = [
     {
       image: 'assets/images/product2.jpg',
@@ -73,14 +73,25 @@ export class ProductsComponent {
     }
   ];
 
-  scrollLeft() {
-    const track = document.querySelector('.carousel-track') as HTMLElement;
-    track.scrollLeft -= 320; // Scroll based on the new card width
+  track!: HTMLElement;
+
+  ngAfterViewInit() {
+    this.track = document.querySelector('.carousel-track') as HTMLElement;
   }
-  
+
+  scrollLeft() {
+    const cardWidth = this.getCardWidth();
+    this.track.scrollLeft -= cardWidth;
+  }
+
   scrollRight() {
-    const track = document.querySelector('.carousel-track') as HTMLElement;
-    track.scrollLeft += 320; // Scroll based on the new card width
+    const cardWidth = this.getCardWidth();
+    this.track.scrollLeft += cardWidth;
+  }
+
+  private getCardWidth(): number {
+    const card = this.track.querySelector('app-products-card') as HTMLElement;
+    return card ? card.offsetWidth + 20 : 320; // Add gap (20px) to card width
   }
 }
 

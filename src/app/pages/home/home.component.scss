@@ -6,15 +6,22 @@
   color: white;
   height: fit-content;
   padding: 15px 10px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 
   .logo {
     font-size: 1.5rem;
     font-weight: lighter;
     font-style: italic;
     font-family: system-ui;
+    margin-bottom: 0.5rem; /* Add spacing for stacked layout on small screens */
   }
 
   nav {
+    display: flex;
+    flex-wrap: wrap; /* Wrap nav items on small screens */
+    justify-content: center; /* Center navigation items */
+    gap: 10px;
+
     a {
       margin: 0 10px;
       text-transform: none;
@@ -22,16 +29,18 @@
       color: white;
       font-size: large;
     }
+
     a:hover {
-      text-decoration: underline; 
+      text-decoration: underline;
     }
+
     a.active-nav {
       color: #ffb05a;
       font-weight: bold;
       border-bottom: 2px solid #ffb05a;
       pointer-events: none;
     }
-    
+
     a.active-nav:hover {
       color: #ffb05a;
       cursor: none;
@@ -39,59 +48,38 @@
   }
 
   .spacer {
-    flex: 1 1 auto;
+    flex: 1 1 auto; /* Push nav items to the right */
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 10px;
+
+    .logo {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      justify-content: flex-start; /* Align nav items to the left */
+      gap: 5px;
+
+      a {
+        margin: 0 5px;
+        font-size: medium;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      a {
+        font-size: small; /* Reduce font size further for very small screens */
+      }
+    }
   }
 }
 
 .home-main {
   padding: 1rem;
-}
-
-
-
-/*------------ Contact US------------*/
-
-.contactBox {
-  display: flex;
-  gap: 15px;
-}
-
-.contactBox iframe,
-.contactBox form {
-  width: 50%;
-  border-radius: 20px;
-  background-color: lightgray;
-  border: solid lightgray 2px;
-}
-
-.contactBox form {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.contactBox input,
-.contactBox textarea {
-  border: 1px solid lightgray;
-  height: 30px;
-  border-radius: 10px;
-  outline: none;
-}
-
-.contactBox textarea {
-  height: 150px;
-}
-
-.contactBox button {
-  background-color: rgba(1, 255, 9, 0.599);
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  color: white;
-}
-
-input:focus,
-textarea:focus {
-  border: solid black 1px;
 }
