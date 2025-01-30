@@ -1,201 +1,232 @@
-.dashboard-main {
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 97%;
+    padding: 16px;
+  }
+  
+  /* General Row Style */
+  .row {
+    display: flex;
+    gap: 16px;
+  }
+  
+  /* First Row - 4 Stat Cards */
+  .first-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .stat-top{
+    width: 100%;
+    img{
+      width:  16px;
+      height: 16px;
+    }
+    display: flex;
+    justify-content: space-between; /* space between horizontally */
+    align-items: center;
+   
+  }
+  
+  /* Second Row - 2 Charts Taking Full Width */
+  .second-row {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+  }
+  
+  .full-width-card {
+    flex: 1;
+  }
+  
+  /* Third Row - 3 Cards */
+  .third-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+/* Inbox Card */
+.inbox-card {
+    padding: 16px;
+    background: white;
+  }
+ 
+  
+  .inbox-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Profile Picture */
+  .profile-pic {
+    width: 55px;  /* Increased size */
+    height: 55px;
+    border-radius: 50%; /* Circular */
+  }
+  
+  /* Message Content */
+  .message-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Takes up remaining space */
+    margin-left: 12px;
+  }
+  
+  .name {
+    font-size: 16px; /* Smaller than h3 */
+    font-weight: 500; /* Slightly bold but not extreme */
+    margin: 0;
+  }
+  
+  .message-preview {
+    font-size: 14px;
+    color: grey;
+    margin: 0;
+  }
+  
+  /* Time Display */
+  .time {
+    font-size: 12px;
+    color: grey;
+    white-space: nowrap; /* Prevents wrapping */
+  }
+
+  /* Stat Card Styles */
+  .stat-card {
+    
+    text-align: left;
+    background: white;
+  }
+  
+  .stat-content {
+    padding: 6px;
+    margin: 2px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-title {
+    font-size: 14px;
+    color: grey;
+  }
+
+  /* Sales Statistics Card */
+.sales-card {
+    margin-top: 25px;
     background: white;
-    padding: 0 1rem;
-
-    // padding: 0 1rem;
-    .header-dash {
-        font-size: larger;
-        font-weight: 500;
-    }
-
-    .title-nav {
-        color: grey;
-    }
-}
-
-mat-card {
-    background: white;
-    border-radius: 0;
-
-    .card-title {
-        margin-left: 1rem;
-        color: purple;
-    }
-
-    .card-body {
-        padding: 5px 10px;
-
-        .partition-upper {
-            .first-partition {
-                .tag {
-                    margin: 10px 0;
-                    font-size: 15px;
-                    font-weight: 500;
-                    color: grey;
-                }
-
-                h3 {
-                    margin: 10px 0;
-                }
-
-                .note {
-                    font-size: 15px;
-                    color: grey;
-
-                    span {
-                        color: white;
-                        background: green;
-                        border-radius: 5px;
-                        padding: 1px 2px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.card-div {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0.5rem;
-
-    justify-content: space-between;
-    margin-top: 2rem;
-
-    img {
-        width: 14rem;
-    }
-}
-
-.card2-div {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 5fr 1fr;
-    gap: 1rem;
-    max-width: 100%;
-
-    justify-content: space-between;
-    margin-top: 2rem;
-
-    .img1 {
-        width: 41.6rem;
-    }
-
-    .img2 {
-        width: 20rem;
-    }
-
-}
-
-.card3-div {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 4fr;
-    gap: 1rem;
-    max-width: 100%;
-
-    justify-content: space-between;
-    margin-top: 2rem;
-
-    h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: purple;
-    }
-
-    .lower-left-card {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+   
+    border-radius: 10px;
+  }
+  
+  /* Layout adjustments */
+  .sales-content {
+    span {
         display: flex;
-        width: 20rem;
+        align-items: center;
         justify-content: space-between;
-
-        .profile-data {
-            display: flex;
-
-            .data-p {
-                margin-top: 1rem;
-
-                .name {
-                    margin: 0;
-                }
-
-                .bio {
-                    margin: 0;
-                    font-size: 15px;
-                    color: grey;
-                }
-            }
-        }
-
-        .time-p {
-            font-size: 15px;
-            color: grey;
-        }
+        font-size: 16px;
     }
+  }
+  
+  /* Sales Title */
+  .sales-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  /* Custom Progress Bar */
+  .sales-bar {
+    flex: 1;
+    height: 8px;
+    background: #e0e0e0; /* Light grey background */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 6px;
+  }
+  
+  /* Filled Progress Bar */
+  .progress-bar-fill {
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+  }
+  
+ 
+  .stat-note {
+    font-size: 13px;
+    color: grey;
+    display: flex;
+    align-items: center; /* Align text and badge */
+  }
+  
+  .badge {
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-right: 8px; /* Add spacing between badge and text */
+  }
 
-    .progress-cards {
-        display: grid;
-        gap: 0.5rem;
-
-        // .progress-card {
-        //     height: fit-content;
-        // }
-
-        h4 {
-            margin: 0;
-            color: purple;
-        }
-
-        p {
-            font-size: 15px;
-            margin: 10px 0;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        mat-progress-bar {
-            margin: 10px 0 0 0;
-        }
+  /* Table Styles */
+  table {
+    font-size: 16px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+  
+  td span {
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .paid {
+    background: #1bb99a;
+    color: white;
+  }
+  
+  .unpaid {
+    background: #ff5d48;
+    color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .first-row {
+      grid-template-columns: repeat(2, 1fr);
     }
-
-    .table-cards {
-        .table-card {
-            h4 {
-                margin-top: 0;
-                color: purple;
-            }
-
-            table,
-            td,
-            th {
-                border: 1px solid #8080805c;
-                font-size: 15px;
-                text-align: left;
-                padding: 15px 0 15px 5px;
-            }
-
-            th {
-                font-weight: 500;
-            }
-
-            td {
-                font-weight: 300;
-
-                span {
-                    background: #1bb99a;
-                    color: white;
-                    padding: 1px 5px;
-                    border-radius: 5px;
-                }
-            }
-
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-        }
+  
+    .second-row {
+      flex-direction: column;
     }
-
-}
+  
+    .third-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .first-row, .third-row {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -29,6 +29,7 @@ import { AchievementComponent } from './home/about/achievement/achievement.compo
 import { ProductsComponent } from './home/about/products/products.component';
 import { ProductsCardComponent } from './common-components/cards/products-card/products-card.component'
 import { PricingCardComponent } from './common-components/cards/pricing-card/pricing-card.component';
+import { MatGridListModule } from '@angular/material/grid-list' 
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PricingCardComponent } from './common-components/cards/pricing-card/pri
   imports: [
     CommonModule,
     PagesRoutingModule,
+    MatGridListModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

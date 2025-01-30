@@ -1,4 +1,7 @@
 .doughnut-chart {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
     padding: 10px 0;
     height: 21rem;
     max-height: 21rem;
