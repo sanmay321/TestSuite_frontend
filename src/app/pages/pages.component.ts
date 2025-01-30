@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pages',
-  template: ``,
+  template: `<app-side-menu></app-side-menu>`,
   // styleUrl: './pages.component.scss'
 })
 export class PagesComponent {
