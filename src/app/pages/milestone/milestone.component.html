@@ -1,63 +1,45 @@
 <div class="body">
   <main>
     <header>
-      <p class="heading">Milestone</p>
+      <p class="heading">Milestones</p>
       <div class="menu">
-        <select name="item" id="item">
-          <option value="defects" selected>Defects</option>
+      <div class="dropdown-with-icon">
+        <select>
+          <option value="defects">Defects</option>
+          <option value="issues">Issues</option>
+          <option value="bugs">Bugs</option>
         </select>
-        <i class="fa-solid fa-table-list"></i>
-        <i class="fa-solid fa-rectangle-list"></i>
-        <i class="fa-solid fa-bars"></i>
+        </div>
+       
       </div>
     </header>
+    <section>
 
     <article id="open">
-      <div class="checkbox">
-        <p class="heading">Open</p>
-      </div>
-      <div class="checkbox">
-        <div>
-          <input type="checkbox" name="all" id="all" />
-          <label for="all">Select All</label>
-        </div>
-      </div>
-      <div class="checkbox">
-        <div>
-          <input type="checkbox" name="open1" id="open1" />
-          <i class="fa-solid fa-flag"></i>
-          <div class="open" id="open1">
-            <p class="heading"><a class="milestones__custom-link" routerLink="/pages/testrunAndResults">V2024.7</a></p>
-            <p>
-              Due on 7/26/2024 | <a href="">Edit</a> |
-              <a href="">Add Milestone</a>
-            </p>
-            <p>
-              has <b>0</b> active test plans and <b>1</b> active test run.
-            </p>
-          </div>
-        </div>
-        <div class="checkbox-right">
-          <div class="progress-bar">
-            <div class="progress"></div>
-          </div>
-          <p>90%</p>
-          <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
-        </div>
-      </div>
+    
+     <p class="section-title">Open</p> <div class="underline"></div>
+    
+      <app-status-card *ngFor=" let i of [1,2,3,4]"
+        [cardData]="{
+          tag: 'MileStone',
+          iconPath: 'assets/icons/Flag.png',
+          details: {
+            title: 'V2024.7',
+            dueDate: '7/26/2024',
+            activeTestPlan: 0,
+            activeTestRun: 1,
+            completion: 78
+          },
+          links: [{ label: 'Edit', url: '/edit' }, { label: 'Add Milestone', url: '/add-milestone' }]
+        }"
+      ></app-status-card>
+
     </article>
 
     <article id="completed">
-      <div class="checkbox">
-        <p class="heading">Completed</p>
-        <p class="pagination">
-          <span class="pagination-prev" (click)="prevPage()">&lt;&lt; Prev</span>
-          <span class="pagination-pages">
-            <span class="pagination-page" *ngFor="let n of pages" [class.active]="page === n" (click)="toPage(n)">{{n}}</span>
-          </span>
-          <span class="pagination-next" (click)="nextPage()"> Next&gt;&gt;</span>
-        </p>
-      </div>
+      
+        <p class="section-title">Completed</p> <div class="underline"></div>
+       
       <div class="checkbox">
         <div>
           <input type="checkbox" name="complete1" id="complete1" />
@@ -145,6 +127,7 @@
         </div>
       </div>
     </article>
+  </section>
   </main>
   <aside>
     <button type="button" class="btn">+ Add Milestone</button>

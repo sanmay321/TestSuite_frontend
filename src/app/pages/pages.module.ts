@@ -30,7 +30,10 @@ import { ProductsComponent } from './home/about/products/products.component';
 import { ProductsCardComponent } from './common-components/cards/products-card/products-card.component'
 import { PricingCardComponent } from './common-components/cards/pricing-card/pricing-card.component';
 import { MatGridListModule } from '@angular/material/grid-list' 
-
+import { StatusCardComponent } from './common-components/cards/status-card/status-card.component';
+import { MilestoneComponent } from './milestone/milestone.component';
+import { TestrunsAndResultsComponent } from './testruns-and-results/testruns-and-results.component';
+import { TestsuitesAndCasesComponent } from './testsuites-and-cases/testsuites-and-cases.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -46,10 +49,14 @@ import { MatGridListModule } from '@angular/material/grid-list'
     AchievementComponent,
     ProductsCardComponent,
     ProductsComponent,
-    PricingCardComponent
+    PricingCardComponent,
+     MilestoneComponent,
+     TestrunsAndResultsComponent,
+     TestsuitesAndCasesComponent,
+    StatusCardComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule, 
     PagesRoutingModule,
     MatGridListModule,
     MatSidenavModule,

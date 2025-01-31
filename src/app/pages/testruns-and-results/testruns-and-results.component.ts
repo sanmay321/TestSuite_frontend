@@ -9,8 +9,6 @@ import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-testruns-and-results',
-  standalone: true,
-  imports: [RouterModule, NgFor],
   templateUrl: './testruns-and-results.component.html',
   styleUrl: './testruns-and-results.component.scss'
 })

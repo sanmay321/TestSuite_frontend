@@ -1,48 +1,86 @@
 .body {
-    background-color: #ffffff;
+    background-color: #d4ecf282;
     display: grid;
     grid-template-columns: 5fr 1fr;
-    padding: 14px 0 0 14px;
-}
-
-header {
-    border-bottom: 1px lightblue solid;
+    padding: 14px;
+    gap: 1rem;
+    width: 97%;
+  }
+  
+  header {
+    border-bottom: 1px solid lightblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 2rem;
-    margin-top: -0.5rem;
-}
-
-.heading {
+    height: 2.5rem;
+    padding-bottom: 20px;
+  
+    @media (max-width: 719px) {
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+  }
+  
+  .heading {
     font-weight: bold;
     font-size: 1.5rem;
-}
+  
+    @media (max-width: 480px) {
+      font-size: 1.2rem; // Smaller font on mobile
+    }
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 10px; // Ensures spacing between dropdowns
+  
+    @media (max-width: 719px) {
+      flex-direction: column;
+      gap: 5px; // Reduces spacing on mobile
+    }
+  }
+  
+  .dropdown-with-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: #f8f8f8;
+  }
+  
+  .dropdown-icon {
+    width: 16px; // Adjust the size of the icon
+    height: 16px;
+    margin-right: 8px; // Adds spacing between the icon and the text
+  }
+  
+  select {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 6px 10px;
+    outline: none;
+    cursor: pointer;
+  }
+/* Section Titles */
+.section-title {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .underline {
+    width: 5%;
+    height: 3px;
+    background-color: #007bff; // Blue underline
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
 
-article {
-    margin-bottom: 2rem;
-}
-
-article>div:nth-of-type(2n + 3) {
-    background-color: #ffffff;
-}
-
-article>div {
-    padding: 0.5rem;
-}
-
-article>div>p.heading {
-    border-bottom: 1px lightblue solid;
-    margin-bottom: 0px;
-    padding-bottom: 0.25rem;
-}
-
-/* .open {
-    display: inline-block;
-    vertical-align: middle;
-  } */
-
-/* partition--- left----*/
 
 aside {
     padding: 0.5rem 1rem;

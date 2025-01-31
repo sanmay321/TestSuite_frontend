@@ -1,0 +1,27 @@
+<mat-card class="status-card">
+    <div class="card-content">
+      <div class="descriptions">
+        <!-- Icon -->
+        <img [src]="cardData.iconPath" class="card-icon" alt="Card Icon" />
+    
+        <!-- Text Content -->
+        <div class="card-text">
+          <!-- Title -->
+          <h3 class="card-title">{{ cardData.details.title }}</h3>
+    
+          <!-- Dynamic Details (links always on second line) -->
+          <p class="card-detail" [innerHTML]="getDetails()[0]"></p>
+          <p class="card-detail">{{ getDetails()[1] }}</p>
+        </div>
+      </div>
+  
+      <!-- Progress Bar (only shown if completion/percentage exists) -->
+      <div class="progress-container" *ngIf="getCompletion() !== -1">
+        <div class="progress-bar">
+          <div class="progress-filled" [style.width.%]="getCompletion()"></div>
+          <div class="progress-remaining" [style.width.%]="100 - getCompletion()"></div>
+        </div>
+        <span class="progress-text">{{ getCompletion() }}%</span>
+      </div>
+    </div>
+  </mat-card>

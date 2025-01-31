@@ -10,24 +10,23 @@
       </header>
   
       <article id="open" *ngFor="let s of testSuites">
-        <div class="checkbox">
-          <div>
-            <!-- <input type="checkbox" name="open1" id="open1" /> -->
-            <i class="fa-solid fa-flag"></i>
-            <div class="open" id="open1">
-              <p class="heading">
-                <a routerLink="/pages/add-test-case" class="testsuites__custom-link">{{ s.name }}</a>
-              </p>
-              <p>
-                <a class="testsuites__custom-link blue">Run Test</a> | <a class="testsuites__custom-link blue">Test Runs</a> |
-                <a class="testsuites__custom-link blue" (click)="addTestSuite(s)">Edit</a>
-              </p>
-              <p>
-                {{s.description}} <b>{{s.testRunsAmount}}</b> active test runs.
-              </p>
-            </div>
-          </div>
-        </div>
+        <app-status-card
+  [cardData]="{
+    tag: 'TestSuite',
+    iconPath: 'assets/icons/Dashboard.png',
+    details: {
+      title: 'XYZ Project',
+      sections: 270,
+      testCases: 2787,
+      activeTestRuns: 2
+    },
+    links: [
+      { label: 'Run Test', url: '/run-test' },
+      { label: 'Test Runs', url: '/test-runs' },
+      { label: 'Edit', url: '/edit' }
+    ]
+  }"
+></app-status-card>
       </article>
     </main>
     <aside>

@@ -6,8 +6,6 @@ import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-milestone',
-  standalone: true,
-  imports: [RouterModule, NgFor],
   templateUrl: './milestone.component.html',
   styleUrl: './milestone.component.scss'
 })

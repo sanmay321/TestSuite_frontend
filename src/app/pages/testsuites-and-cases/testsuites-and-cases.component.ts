@@ -8,8 +8,6 @@ import { AddTestSuiteComponent } from '../../component/modals/add-test-suite/add
 
 @Component({
   selector: 'app-testsuites-and-cases',
-  standalone: true,
-  imports: [NgFor, RouterModule],
   templateUrl: './testsuites-and-cases.component.html',
   styleUrl: './testsuites-and-cases.component.scss',
 })

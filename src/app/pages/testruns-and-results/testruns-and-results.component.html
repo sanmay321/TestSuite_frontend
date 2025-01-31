@@ -25,63 +25,28 @@
       </header>
 
       <article id="open">
+        <app-status-card
+            [cardData]="{
+              tag: 'TestRuns',
+              iconPath: 'assets/icons/TaskIcon.png',
+              details: {
+                title: 'XYZ Project',
+                editor: 'Vaibhav P.',
+                editedDate: '7/23/2024',
+                passed: 511,
+                failed: 7,
+                incomplete: 0,
+                obsolete: 0,
+                notExecuted: 0,
+                completion: 99
+              },
+              links: [{ label: 'Edit', url: '/edit' }]
+            }"
+          ></app-status-card>
         <div class="checkbox">
           <p class="heading">Open</p>
         </div>
-        <div class="checkbox">
-          <div>
-            <input type="checkbox" name="all" id="all" />
-            <label for="all">Select All</label>
-          </div>
-        </div>
-        <div class="checkbox">
-          <div>
-            <input type="checkbox" name="open1" id="open1" />
-            <i
-              class="fa-solid fa-circle-play fa-2xl"
-              style="color: #5d2cef"
-            ></i>
-            <div class="open" id="open1">
-              <p class="heading"><a class="tests-and-results__custom-link" routerLink="/pages/test-execution">XYZ project</a></p>
-              <p>By Isht S. on 7/23/2024 | <a class="tests-and-results__custom-link blue" (click)="openAddTestRun('run', {name: 'XYZ project', description: 'By Isht S. on 7/23/2024'})">Edit</a></p>
-              <p>
-                511 Passed, 7 Failed, 0 Incomplete, 0 Obsolete and 0 Not
-                Executed.
-              </p>
-            </div>
-          </div>
-          <div class="checkbox-right">
-            <div class="progress-bar">
-              <div class="progress"></div>
-            </div>
-            <p>90%</p>
-            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
-          </div>
-        </div>
-        <div class="checkbox">
-          <div>
-            <input type="checkbox" name="open1" id="open1" />
-            <i
-              class="fa-solid fa-circle-play fa-2xl"
-              style="color: #5d2cef"
-            ></i>
-            <div class="open" id="open1">
-              <p class="heading"><a class="tests-and-results__custom-link" routerLink="/pages/test-execution">XYZ project</a></p>
-              <p>By Vidit S. on 6/19/2024 | <a class="tests-and-results__custom-link blue" (click)="openAddTestRun('run', {name: 'XYZ project', description: 'By Vidit S. on 6/19/2024'})">Edit</a></p>
-              <p>
-                11 Passed, 33 Failed, 0 Incomplete, 0 Obsolete and 0 Not
-                Executed.
-              </p>
-            </div>
-          </div>
-          <div class="checkbox-right">
-            <div class="progress-bar">
-              <div class="progress1"></div>
-            </div>
-            <p>25%</p>
-            <i class="fa-solid fa-trash-can fa-xs" style="color: #ff0000"></i>
-          </div>
-        </div>
+        
       </article>
 
       <article id="completed">
