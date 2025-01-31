@@ -1,3 +1,188 @@
-<div style="padding: 20px;">
-    <h2>Overview page</h2>
-</div>
+<div class="body">
+    <main>
+      <header>
+        <p class="heading">XYZ Project</p>
+        <div class="menu">
+        <div class="dropdown-with-icon">
+          <select>
+            <option value="defects">Defects</option>
+            <option value="issues">Issues</option>
+            <option value="bugs">Bugs</option>
+          </select>
+          </div>
+          <div class="dropdown-with-icon">
+            <img src="assets/icons/bar-graph.png" alt="Reports Icon" class="dropdown-icon" />
+            <select>
+                <option value="reports">Reports</option>
+                <option value="summary">Summary</option>
+                <option value="history">History</option>
+            </select>
+          </div>
+        </div>
+      </header>
+     
+      <section class="data-section">
+        <div class="chart-options">
+            <div class="three-buttons">
+              <button class="icon-button"><img src="assets/icons/bar-graph.png" alt="Option 1"></button>
+              <button class="icon-button"><img src="assets/icons/bar-graph.png" alt="Option 2"></button>
+              <button class="icon-button"><img src="assets/icons/bar-graph.png" alt="Option 3"></button>
+            </div>
+          
+            <div class="two-buttons">
+              <button class="icon-button"><img src="assets/icons/bar-graph.png" alt="Chart Type"></button>
+              <button class="refine-button">Refine</button>
+            </div>
+          </div>
+          <div class="graph-section">
+            <div class="chart-container">
+              <canvas id="barChart"></canvas>
+          
+              <!-- No Data Overlay -->
+              <div class="no-data-overlay" id="noDataMessage">
+                <div class="no-data-box">
+                  <span class="error-icon">❌</span>
+                  <p>No data found in your selection.</p>
+                  <p class="secondary-message">Try another date selection.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="graph-legend">
+              <p class="legend-title">In the past 5 days:</p>
+              <ul class="legend-list">
+                <li>
+                  <span class="legend-circle passed"></span>
+                  <span class="legend-label">0 Passed</span>
+                </li>
+                <li>
+                  <span class="legend-circle failed"></span>
+                  <span class="legend-label">0 Failed</span>
+                </li>
+                <li>
+                  <span class="legend-circle incomplete"></span>
+                  <span class="legend-label">0 Incomplete</span>
+                </li>
+                <li>
+                  <span class="legend-circle obsolete"></span>
+                  <span class="legend-label">0 Obsolete</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="grid-container">
+            <!-- Milestones Section -->
+            <div class="milestones">
+              <div class="section-title">
+                <p>Milestones</p>
+                <div class="underline"></div>
+              </div>
+             
+              <div *ngFor="let milestone of milestones" class="milestone-card">
+                
+                <img src="assets/icons/Flag.png" alt="Milestone Icon" class="icon">
+                <div class="milestone-details">
+                  <span class="milestone-title">{{ milestone.title }}</span>
+                  <span class="milestone-date">{{ milestone.date }}</span>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Test Runs Section -->
+            <div class="test-runs">
+              <div class="section-title">
+                <p>Test Runs</p>
+                <div class="underline"></div>
+              </div>
+              <div *ngFor="let testRun of testRuns" class="test-run-card">
+                <img src="assets/icons/TaskIcon.png" alt="Test Run Icon" class="icon">
+                <div class="test-run-details">
+                  <span class="test-title">{{ testRun.title }}</span>
+                  <span class="test-date">{{ testRun.date }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="activities-section">
+            <!-- Header Titles with Clickable Filters -->
+            <div class="activities-header">
+              <p class="section-title">
+                Activities
+              </p>
+              <div class="history-testChanges">
+                <p class="section-title" [class.active-tab]="activeTab === 'history'" (click)="setActiveTab('history')">
+                  History
+                </p> 
+                <span class="separator"> | </span>
+               <p class="section-title" [class.active-tab]="activeTab === 'testChanges'" (click)="setActiveTab('testChanges')">
+                  Test Changes
+                </p>
+              </div>
+            </div>
+            <div class="underline"></div>
+          
+            <!-- Activities List -->
+            <div class="activities-list">
+              <div *ngFor="let activityGroup of filteredActivities" class="activity-group">
+                <h4 class="activity-date">{{ activityGroup.date }}</h4>
+          
+                <div *ngFor="let activity of activityGroup.activities" class="activity-card">
+                  <span class="tag" [ngClass]="{'test-run': activity.tag === 'Test Run', 'milestone': activity.tag === 'Milestone'}">
+                    {{ activity.tag }}
+                  </span>
+                  <span class="activity-title">{{ activity.title }}</span>
+                  <span class="completed-tag" *ngIf="activity.completed">(Completed)</span>
+                  <span class="closed-by">Closed by {{ activity.closedBy }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+  
+    <aside>
+      <h3  class="section-title">Actions</h3> <div class="underline-aside"></div>
+      <ul>
+        
+        <li>
+          <div class="test-run-card">
+            <img src="assets/icons/Flag.png" alt="Test Run Icon" class="icon">
+            <div class="test-run-details">
+              <span class="test-title">Milestones </span>
+              
+              <span class="test-date">Add | View All</span>
+             
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="test-run-card">
+            <img src="assets/icons/TaskIcon.png" alt="Test Run Icon" class="icon">
+            <div class="test-run-details">
+              <span class="test-title">Test Runs </span>
+              
+              <span class="test-date">Add | View All</span>
+             
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="test-run-card">
+            <img src="assets/icons/Dashboard.png" alt="Test Run Icon" class="icon">
+            <div class="test-run-details">
+              <span class="test-title">Tests Suites </span>
+              
+              <span class="test-date">Add | View All</span>
+             
+            </div>
+          </div>
+        </li>
+      
+      </ul>
+  
+      <h3  class="section-title">To-dos</h3> <div class="underline-aside"></div>
+      <p>None.</p>
+    </aside>
+  </div>

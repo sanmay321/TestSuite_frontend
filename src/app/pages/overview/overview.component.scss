@@ -1,0 +1,510 @@
+.body {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    padding: 14px;
+    gap: 1rem;
+  }
+  
+  header {
+    border-bottom: 1px solid lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+    padding-bottom: 20px;
+  }
+  
+  .heading {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 10px; // Ensures spacing between dropdowns
+  }
+  
+  .dropdown-with-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: #f8f8f8;
+  }
+  .data-section{
+    margin-top: 30px;
+  }
+  .dropdown-icon {
+    width: 16px; // Adjust the size of the icon
+    height: 16px;
+    margin-right: 8px; // Adds spacing between the icon and the text
+  }
+  
+  select {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 6px 10px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .data-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .graph-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px; // Ensures spacing between graph and legend
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .chart-container {
+    width: 70%; // Reduce graph size
+    background-color: white;
+    padding: 15px;
+    position: relative;
+  }
+  .no-data-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  
+  .no-data-box {
+    text-align: center;
+    padding: 20px;
+    background-color: #790e94; // Light purple box
+    border: 2px solid #8a2be2; // Darker purple border
+    border-radius: 6px;
+    color: #dbd6de; // Deep purple text
+    width: 80%;
+    max-width: 320px;
+  }
+  
+  .error-icon {
+    font-size: 24px;
+    color: #8a2be2;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .secondary-message {
+    font-size: 14px;
+    color: #c2c2c2; // Darker purple text
+    margin-top: 5px;
+  }
+  
+  
+  .graph-legend {
+    width: 20%;
+    background-color: white;
+    padding: 15px;
+  }
+  
+  .legend-title {
+    font-weight: semi-bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .legend-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .legend-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .legend-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .passed {
+    background-color: green;
+  }
+  
+  .failed {
+    background-color: red;
+  }
+  
+  .incomplete {
+    background-color: orange;
+  }
+  
+  .obsolete {
+    background-color: blue;
+  }
+  
+  .legend-label {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .chart-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .three-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: 10px; // Added margin to push it away from the left edge
+  }
+  
+  .two-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 10px; // Added margin to push it away from the right edge
+  }
+  
+  .icon-button {
+    width: 36px;
+    height: 36px;
+    background-color: #f0f4f8;
+    border: 1px solid #c3cfd9;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .icon-button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .icon-button:hover {
+    background-color: #d6e4f0;
+  }
+  
+  .refine-button {
+    padding: 6px 14px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .refine-button:hover {
+    background-color: purple;
+  }
+  
+  h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+ /* Grid Layout for Milestones & Test Runs */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Two equal columns
+  gap: 20px; // Space between sections
+  margin-top: 15px;
+}
+
+/* Section Titles */
+.section-title {
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.underline {
+  width: 5%;
+  height: 3px;
+  background-color: #007bff; // Blue underline
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+.underline-aside {
+  width: 15%;
+  height: 3px;
+  background-color: #007bff; // Blue underline
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+/* Card Style */
+.milestone-card, .test-run-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: 10px;
+}
+
+/* Icons */
+.icon {
+  width: 28px; // Increased size
+  height: 28px;
+  margin-right: 12px;
+}
+
+/* Text Styling */
+.milestone-details, .test-run-details {
+  display: flex;
+  flex-direction: column; // Ensures title and date are in separate lines
+  align-items: flex-start; // Align text with the icon
+}
+
+.milestone-title, .test-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.milestone-date, .test-date {
+  font-size: 12px;
+  color: #666;
+}
+
+
+.activities-section {
+  margin-top: 20px;
+}
+
+/* Header Titles */
+.activities-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.history-testChanges {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer; /* Ensures "Test Changes" & "History" are clickable */
+  transition: color 0.2s ease-in-out;
+}
+
+.separator {
+  color: gray;
+}
+
+.active-tab {
+  border-bottom: 3px solid #007bff;
+  margin-bottom: -6px;
+  padding-bottom: 18px;
+}
+/* Activities List */
+.activities-list {
+  margin-top: 15px;
+}
+
+/* Activity Date */
+.activity-date {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Activity Cards */
+.activity-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+/* Tags */
+.tag {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.test-run {
+  background-color: rgb(142, 34, 205);
+  color: white;
+ 
+}
+
+.milestone {
+  background-color: rgb(232, 85, 178);
+  color: white;
+
+}
+
+/* Completed Label */
+.completed-tag {
+  font-size: 12px;
+  font-weight: bold;
+  color: #c2c2c2;
+}
+
+/* Closed By */
+.closed-by {
+  font-size: 12px;
+  color: #666;
+  margin-left: auto;
+}
+
+/* Activity Title */
+.activity-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+  aside {
+    background-color: rgb(193, 217, 226);
+    padding: 1rem;
+    border: 1px solid rgb(94, 162, 184);
+    position: sticky;
+    top: 10px;
+  }
+ 
+  aside ul {
+    list-style: none;
+    padding: 0;
+  }
+ 
+  
+  aside p {
+    font-size: 16px;
+  }
+
+/* 4K and Ultra-Wide Screens */
+@media (min-width: 2000px) {
+  .body {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .chart-container {
+    max-width: 1200px;
+  }
+}
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .chart-container,
+  .graph-legend {
+    width: 100%;
+  }
+}
+
+/* Large Phones & Small Tablets */
+@media (max-width: 719px) {
+  header {
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .graph-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .three-buttons,
+  .two-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .activities-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Mid-size Phones */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .milestone-card,
+  .test-run-card,
+  .activity-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .activity-card {
+    padding: 12px;
+  }
+
+  .closed-by {
+    margin-left: 0;
+  }
+
+  .active-tab {
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 8px;
+    margin-bottom: -4px;
+  }
+}
