@@ -1,94 +1,101 @@
-<div class="register-main">
-  <div class="register-header">
-    <h1>Get Started</h1>
-    <p>30-day free trial. No credit card required.</p>
-  </div>
-
-  <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <div class="register-body">
-      <div class="reg-outer-body">
-        <div class="input-group">
-          <div>
-            <label for="firstName">First Name <span>*</span></label>
-            <input id="firstName" formControlName="firstName">
-          </div>
-          <div>
-            <label for="lastName">Last Name <span>*</span></label>
-            <input id="lastName" formControlName="lastName">
-          </div>
+<div>
+  <mat-tab-group>
+    <mat-tab label="Login"><app-signin></app-signin></mat-tab>
+    <mat-tab label="Signup">
+      <div class="register-main">
+        <div class="register-header">
+          <h1>Get Started</h1>
+          <p>30-day free trial. No credit card required.</p>
         </div>
 
-        <div class="input-group">
-          <div>
-            <label for="email">Work Email <span>*</span></label>
-            <input id="email" formControlName="email" type="email">
+        <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="register-body">
+            <div class="reg-outer-body">
+              <div class="input-group">
+                <div>
+                  <label for="firstName">First Name <span>*</span></label>
+                  <input id="firstName" formControlName="firstName">
+                </div>
+                <div>
+                  <label for="lastName">Last Name <span>*</span></label>
+                  <input id="lastName" formControlName="lastName">
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div>
+                  <label for="email">Work Email <span>*</span></label>
+                  <input id="email" formControlName="email" type="email">
+                </div>
+                <div>
+                  <label for="phone">Phone Number</label>
+                  <input id="phone" formControlName="phone">
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div>
+                  <label for="company">Company Name <span>*</span></label>
+                  <input id="company" formControlName="company">
+                </div>
+                <div>
+                  <label for="country">Country <span>*</span></label>
+                  <select id="country" formControlName="country">
+                    <option value="">Your country</option>
+                    <option value="USA">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="Germany">Germany</option>
+                    <!-- Add more countries -->
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="users">How many users do you expect to access TestSuite? <span>*</span></label>
+                <select id="users" formControlName="users">
+                  <option value="">Select</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-100">51-100</option>
+                </select>
+              </div>
+
+              <p class="info-text">
+                After signing up, we will instantly create a new TestSuite Cloud account for you. 
+                Already have a TestSuite account? <a href="#">Contact us</a>.
+              </p>
+
+              <div>
+                <label for="webAddress">Web Address <span>*</span></label>
+                <div class="web-address-group">
+                  <input id="webAddress" formControlName="webAddress" placeholder="Choose a name">
+                  <span class="suffix">.testsuite.io</span>
+                </div>
+                <small>Your account will be available under this address.</small>
+              </div>
+
+              <div class="checkbox-group">
+                <input type="checkbox" id="terms" formControlName="terms">
+                <label for="terms">
+                  I agree to the 
+                  <a href="#">TestSuite Cloud Terms of Service</a>, 
+                  <a href="#">Privacy Policy</a>, and 
+                  <a href="#">Data Processing Agreement</a>.
+                </label>
+              </div>
+              
+              <div class="checkbox-group">
+                <input type="checkbox" id="newsletter" formControlName="newsletter">
+                <label for="newsletter">
+                  I'd like to receive newsletters about testing best practices.
+                </label>
+              </div>
+
+              <button type="submit" [disabled]="signupForm.invalid">Create Account</button>
+            </div>
           </div>
-          <div>
-            <label for="phone">Phone Number</label>
-            <input id="phone" formControlName="phone">
-          </div>
-        </div>
-
-        <div class="input-group">
-          <div>
-            <label for="company">Company Name <span>*</span></label>
-            <input id="company" formControlName="company">
-          </div>
-          <div>
-            <label for="country">Country <span>*</span></label>
-            <select id="country" formControlName="country">
-              <option value="">Your country</option>
-              <option value="USA">United States</option>
-              <option value="UK">United Kingdom</option>
-              <option value="Germany">Germany</option>
-              <!-- Add more countries -->
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label for="users">How many users do you expect to access TestSuite? <span>*</span></label>
-          <select id="users" formControlName="users">
-            <option value="">Select</option>
-            <option value="1-10">1-10</option>
-            <option value="11-50">11-50</option>
-            <option value="51-100">51-100</option>
-          </select>
-        </div>
-
-        <p class="info-text">
-          After signing up, we will instantly create a new TestSuite Cloud account for you. 
-          Already have a TestSuite account? <a href="#">Contact us</a>.
-        </p>
-
-        <div>
-          <label for="webAddress">Web Address <span>*</span></label>
-          <div class="web-address-group">
-            <input id="webAddress" formControlName="webAddress" placeholder="Choose a name">
-            <span class="suffix">.testsuite.io</span>
-          </div>
-          <small>Your account will be available under this address.</small>
-        </div>
-
-        <div class="checkbox-group">
-          <input type="checkbox" id="terms" formControlName="terms">
-          <label for="terms">
-            I agree to the 
-            <a href="#">TestSuite Cloud Terms of Service</a>, 
-            <a href="#">Privacy Policy</a>, and 
-            <a href="#">Data Processing Agreement</a>.
-          </label>
-        </div>
-        
-        <div class="checkbox-group">
-          <input type="checkbox" id="newsletter" formControlName="newsletter">
-          <label for="newsletter">
-            I'd like to receive newsletters about testing best practices.
-          </label>
-        </div>
-
-        <button type="submit" [disabled]="signupForm.invalid">Create Account</button>
+        </form>
       </div>
-    </div>
-  </form>
+  </mat-tab>
+  </mat-tab-group>
 </div>

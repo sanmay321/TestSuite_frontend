@@ -1,78 +1,110 @@
-.register-main {
-    padding: 1rem;
-}
-
-.register-header {
-    text-align: center;
-    color: purple;
-
-    h1,
+.signin-main {
+    padding: 2rem;
+    background-color: #ffff; /* Light beige */
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .signin-header {
+    text-align: left;
+    color: #333;
+    margin-bottom: 1rem;
+  
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
     p {
-        margin-top: 0;
-        margin-bottom: 10px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
     }
-}
-
-.register-body {
-    width: 80%;
-}
-
-.reg-outer-body {
-    width: 100%;
-
-    a {
-        float: right;
-        color: blue;
-        margin-top: 1rem;
-        cursor: pointer;
-        font-size: 15px;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-}
-
-form {
+  }
+  
+  .signin-container {
+    background-color: #d9d5e2; /* Light grey */
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .input-group {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-label {
-    display: block;
-    margin-bottom: 2px;
-    margin-top: 1rem;
-    color: purple;
-    font-weight: 500;
-
+    margin-bottom: 1rem;
+    padding-right: 20px;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  
     span {
-        color: red;
+      color: red;
     }
-}
-
-input {
-    // width: 100%;
-    padding: 0.5rem;
+  }
+  
+  input {
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 97%;
-}
-
-small {
-    color: red;
-}
-
-button {
-    padding: 10px;
-    border-radius: 10rem;
-    background: purple;
+    border-radius: 4px;
+    width: 100%;
+    background-color: white;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .checkbox-group input {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .login-btn {
+    background-color: purple; /* Blue */
     color: white;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    width: 25%;
-}
-
-button:disabled {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .login-btn:disabled {
     background-color: #aaa;
-}
+    cursor: not-allowed;
+  }
+  
+  .forgot-password-btn {
+    background-color: #f2eded;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .forgot-password-btn mat-icon {
+    font-size: 16px;
+  }

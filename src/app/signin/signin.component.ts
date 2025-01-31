@@ -1,25 +1,34 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import {MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import {MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { Route, Router } from '@angular/router';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+
+interface SigninForm {
+  email: FormControl<string>;
+  password: FormControl<string>;
+  keepLoggedIn: FormControl<boolean>;
+}
+
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule]
+  imports: [ReactiveFormsModule, CommonModule, MatIconModule]
 })
 export class SigninComponent {
-  signinForm: FormGroup;
+  signinForm: FormGroup<SigninForm>;
 
   constructor(private fb: FormBuilder, private router: Router, public dialogRef: MatDialogRef<SigninComponent>, public dialog: MatDialog) {
 
-    this.signinForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
+    this.signinForm = new FormGroup<SigninForm>({
+      email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+      password: new FormControl('', { nonNullable: true, validators: Validators.required }),
+      keepLoggedIn: new FormControl(false, { nonNullable: true })
     });
   }
 
@@ -29,7 +38,7 @@ export class SigninComponent {
       const userInfo = localStorage.getItem('user');
       if (userInfo) {
         const user = JSON.parse(userInfo);
-        if(user.username === this.signinForm.value.username && user.password === this.signinForm.value.password) {
+        if(user.username === this.signinForm.value.email && user.password === this.signinForm.value.password) {
           this.onClose();
           this.router.navigate(['/pages/dashboard'], {skipLocationChange: true});
         }
