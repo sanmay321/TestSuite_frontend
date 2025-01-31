@@ -85,6 +85,7 @@
     <mat-card class="info-card">
       <mat-card-content>
         <h5>Top Contracts</h5>
+        <span class="scrolling-table">
         <table>
           <tr>
             <th>Company</th>
@@ -99,6 +100,7 @@
             <td><span [class]="contract.statusClass">{{ contract.status }}</span></td>
           </tr>
         </table>
+      </span>
       </mat-card-content>
     </mat-card>
   </div>

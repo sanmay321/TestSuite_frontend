@@ -1,33 +1,23 @@
-// .header {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     padding: 1rem;
-//     background-color: #3f51b5;
-//     color: white;
-//   }
-
-//   .menu-toggle-btn {
-//     font-size: 1.5rem;
-//     background: none;
-//     border: none;
-//     color: white;
-//     cursor: pointer;
-//     outline: none;
-//   }
-
 .spacer {
   flex: 1 1 auto;
 }
 
 mat-toolbar {
-  // position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   background-color: #2b3d51;
   height: 3.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    height: 2.8rem; // Reduce height on smaller screens
+    padding: 0 0.5rem;
+  }
 }
 
 .menu-button {
@@ -46,25 +36,37 @@ mat-toolbar {
   option {
     background-color: #2b3d51;
   }
+
+  @media (max-width: 768px) {
+    font-size: medium; // Reduce font size for mobile
+    margin-left: 5px;
+  }
 }
 
 .profile-item {
-  padding: 2px 6px;
-  border-radius: 100%;
+  padding: 4px;
+  border-radius: 50%;
   background: #36506e;
 }
 
 .search-bar-wrap {
   position: relative;
+
+
+  @media (max-width: 768px) {
+    flex-grow: 0;
+    width: 50%; // Reduce width on mobile
+  }
 }
 
 .search-bar {
-  padding: 8px 30px 8px 8px;
+  padding: 6px 30px 6px 8px;
   border-radius: 20px;
   border: none;
   background: #36506e;
   color: white;
   font-size: medium;
+  width: 100%;
 
   &-icon {
     position: absolute;
@@ -76,12 +78,21 @@ mat-toolbar {
   &::placeholder {
     color: #fff;
   }
+
+  @media (max-width: 768px) {
+    padding: 4px 25px 4px 8px;
+    font-size: small; // Adjust font size
+  }
 }
 
-.search-bar:focus {
-  border: none;
-}
+// Hide certain elements on mobile
+@media (max-width: 600px) {
+  .company-name,
+  #profile {
+    display: none;
+  }
 
-.search-bar:active {
-  border: none;
+  .search-bar-wrap {
+    width: auto;
+  }
 }

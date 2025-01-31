@@ -209,11 +209,14 @@
     background: #ff5d48;
     color: white;
   }
-  
+  .scrolling-table {
+    overflow: auto;
+  }
   /* Responsive */
   @media (max-width: 1024px) {
     .first-row {
       grid-template-columns: repeat(2, 1fr);
+     
     }
   
     .second-row {
@@ -228,5 +231,14 @@
   @media (max-width: 768px) {
     .first-row, .third-row {
       grid-template-columns: 1fr;
+    }
+    .first-row {
+      width: 97%;
+    }
+    .second-row {
+      width: 95%;
+    }
+    .inbox-card, .info-card, .third-row{
+      width: 90%;
     }
   }
