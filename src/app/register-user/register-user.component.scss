@@ -1,214 +1,136 @@
-// .register-main {
-//   padding: 0 1rem 1rem 1rem;
-// }
-
-// .register-header {
-//   text-align: center;
-//   color: purple;
-//   h1 {
-//     font-size: x-large;
-//     margin-bottom: 0.5rem;
-//   }
-//   p {
-//     margin-top: 0;
-//     margin-bottom: 5px;
-//     font-size: small;
-//   }
-// }
-
-// .register-body {
-//   display: grid;
-//   width: 95%;
-//   grid-template-columns: 1fr 1fr;
-//   gap: 1rem;
-//   // border: solid 1px black;
-
-//   justify-content: space-between;
-// }
-
-// .reg-outer-body {
-//   width: 95%;
-
-//   select {
-//     width: 100%;
-//   }
-
-//   input {
-//     width: 98%;
-//   }
-
-//   .note-line {
-//     margin-top: 0.5rem;
-//     margin-bottom: 0.5rem;
-//     color: purple;
-//     font-size: small;
-
-//     span {
-//       color: blue;
-//     }
-//   }
-// }
-
-// form {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// label {
-//   display: block;
-//   margin-bottom: 2px;
-//   margin-top: 0.5rem;
-//   color: purple;
-//   font-weight: 500;
-//   font-size: small;
-
-//   span {
-//     color: red;
-//   }
-// }
-
-// input {
-//   // width: 100%;
-//   padding: 0.5rem;
-//   border: 1px solid #ccc;
-//   border-radius: 3px;
-//   width: 97%;
-// }
-
-// select {
-//   // width: 100%;
-//   padding: 0.5rem;
-//   border: 1px solid #ccc;
-//   border-radius: 3px;
-//   width: 100%;
-// }
-
-// small {
-//   color: red;
-// }
-
-// .checkboxes {
-//   display: flex;
-
-//   input {
-//     width: fit-content;
-//   }
-
-//   label {
-//     margin-top: 9px;
-//     font-weight: 400;
-//   }
-
-//   span {
-//     color: blue;
-//   }
-// }
-
-
-// button {
-//   padding: 10px;
-//   border-radius: 10rem;
-//   background: purple;
-//   color: white;
-//   margin-top: 1rem;
-// }
-
-// //   }
-
-//   button:disabled {
-//     background-color: #aaa;
-//   }
-
-// // form {
-// //     max-width: 400px;
-// //     margin: 0 auto;
-// //     padding: 1rem;
-// //     border: 1px solid #ccc;
-// //     border-radius: 5px;
-// //   }
-
-// //   div {
-// //     margin-bottom: 1rem;
-// //   }
-
-// -----------------------------------------------------------------------------------------//
-
 .register-main {
-  padding: 1rem;
+  padding: 1.5rem;
+  background-color: #ffffff; /* Light beige */
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .register-header {
   text-align: center;
-  color: purple;
+  color: #333;
 
-  h1,
+  h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
   p {
-      margin-top: 0;
-      margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
   }
 }
 
 .register-body {
-  width: 80%;
+  width: 100%;
 }
 
 .reg-outer-body {
   width: 100%;
-
-  a {
-      float: right;
-      color: blue;
-      margin-top: 1rem;
-      cursor: pointer;
-      font-size: 15px;
-  }
-
-  a:hover {
-      text-decoration: underline;
-  }
-}
-
-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 12px;
+}
+small{
+  font-size: 14px;
+  color: #667;
+}
+.input-group {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+
+  div {
+    flex: 1;
+  }
 }
 
 label {
   display: block;
-  margin-bottom: 2px;
-  margin-top: 1rem;
-  color: purple;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
 
   span {
-      color: red;
+    color: red;
   }
 }
 
-input {
-  // width: 100%;
-  padding: 0.5rem;
+input, select {
+  width: 100%;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 97%;
+  border-radius: 4px;
 }
 
-small {
-  color: red;
+.web-address-group {
+  display: flex;
+  align-items: center;
+
+  input {
+    flex-grow: 1;
+  }
+
+  .suffix {
+    background: #ddd;
+    padding: 8px;
+    border-left: 1px solid #ccc;
+    font-size: 14px;
+  }
+}
+
+.info-text {
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ✅ FIX: Properly left-align checkboxes */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+}
+
+.checkbox-group input {
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+}
+
+.checkbox-group label {
+  flex-grow: 1;
+  font-size: 14px;
+  color: #333;
 }
 
 button {
+  width: 100%;
   padding: 10px;
-  border-radius: 10rem;
-  background: purple;
+  border-radius: 5px;
+  background: purple; /* Orange */
   color: white;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 25%;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 button:disabled {
-  background-color: #aaa;
+  background-color: #ccc;
+  cursor: not-allowed;
 }

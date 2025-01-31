@@ -1,143 +1,94 @@
+<div class="register-main">
+  <div class="register-header">
+    <h1>Get Started</h1>
+    <p>30-day free trial. No credit card required.</p>
+  </div>
 
-<div>
-  <mat-tab-group>
-    <mat-tab label="Login"><app-signin></app-signin></mat-tab>
-    <mat-tab label="Signup"><div class="register-main">
-      <div class="register-header">
-        <h1>Get Started</h1>
-        <p>30-day free trial. No credit card required.</p>
-      </div>
-      <!-- <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div class="register-body">
-          <div class="left-body">
-
-            <div>
-              <label for="firstName">First Name <span>*</span></label>
-              <input id="firstName" formControlName="firstName">
-              <div *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
-                <small *ngIf="signupForm.get('firstName')?.errors?.['required']">First Name is required.</small>
-              </div>
-            </div>
-            <div>
-              <label for="email">Work Email <span>*</span></label>
-              <input id="email" type="text" formControlName="email">
-              <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
-                <small *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</small>
-              </div>
-            </div>
-            <div>
-              <label for="company">Company Name <span>*</span></label>
-              <input id="company" type="text" formControlName="company">
-              <div *ngIf="signupForm.get('company')?.invalid && signupForm.get('company')?.touched">
-                <small *ngIf="signupForm.get('company')?.errors?.['required']">Company Name is required.</small>
-              </div>
-            </div>
-
+  <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="register-body">
+      <div class="reg-outer-body">
+        <div class="input-group">
+          <div>
+            <label for="firstName">First Name <span>*</span></label>
+            <input id="firstName" formControlName="firstName">
           </div>
-          <div class="right-body">
-
-            <div>
-              <label for="lastName">Last Name <span>*</span></label>
-              <input id="lastName" formControlName="lastName">
-              <div *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
-                <small *ngIf="signupForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
-              </div>
-            </div>
-            <div>
-              <label for="phoneNumber">Phone Number</label>
-              <input id="phoneNumber" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-            </div>
-            <div>
-              <label for="country">Country <span>*</span></label>
-              <select id="country" name="cars" formControlName="country">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
-              </select>
-              <div *ngIf="signupForm.get('country')?.invalid && signupForm.get('country')?.touched">
-                <small *ngIf="signupForm.get('country')?.errors?.['required']">Country is required.</small>
-              </div>
-            </div>
-
+          <div>
+            <label for="lastName">Last Name <span>*</span></label>
+            <input id="lastName" formControlName="lastName">
           </div>
         </div>
-        <div class="reg-outer-body">
+
+        <div class="input-group">
           <div>
-            <label for="numberOfUsers">How many users do you expect to access TestSuite? <span>*</span></label>
-            <select id="numberOfUsers" name="cars" formControlName="numberOfUsers">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="fiat">Fiat</option>
-              <option value="audi">Audi</option>
+            <label for="email">Work Email <span>*</span></label>
+            <input id="email" formControlName="email" type="email">
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" formControlName="phone">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div>
+            <label for="company">Company Name <span>*</span></label>
+            <input id="company" formControlName="company">
+          </div>
+          <div>
+            <label for="country">Country <span>*</span></label>
+            <select id="country" formControlName="country">
+              <option value="">Your country</option>
+              <option value="USA">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="Germany">Germany</option>
+              <!-- Add more countries -->
             </select>
-            <div *ngIf="signupForm.get('numberOfUsers')?.invalid && signupForm.get('numberOfUsers')?.touched">
-              <small *ngIf="signupForm.get('numberOfUsers')?.errors?.['required']">Field is required.</small>
-            </div>
-          </div>
-          <p class="note-line">After signing up, we will instantly create a new TestSuite Cloud account for you on our
-            servers.<br>
-            Already have a TestSuite account you want to use? Please <span>contact us.</span></p>
-
-          <div>
-            <label for="webAddress">Web Address <span>*</span></label>
-            <input id="webAddress" formControlName="webAddress">
-            <div *ngIf="signupForm.get('webAddress')?.invalid && signupForm.get('webAddress')?.touched">
-              <small *ngIf="signupForm.get('webAddress')?.errors?.['required']">Web Address is required.</small>
-            </div>
-            <small style="color: grey; margin: 10px 0; font-size: x-small;">Your account will be available under this address.</small>
-          </div>
-          <div>
-            <div class="checkboxes">
-              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-              <label for="vehicle1"> I agree to the <span>TestSuite Cloud Terms of Service</span>, the <span>TestSuite Privacy Policy</span> and the <span>TestSuite Data Processing Agreement ("DPA").</span></label>
-            </div>
-            <div class="checkboxes">
-              <input type="checkbox" id="vehicle2" name="vehicle2" value="Bike">
-              <label for="vehicle2"> I'd like to learn about testing best practices, what's new in the industry, and how to use Testsuite more effectively. Please send me a weekly newsletter!</label>
-            </div>
-          </div>
-
-          <button type="submit" [disabled]="signupForm.invalid">Create Account</button>
-        </div>
-
-      </form> -->
-
-      <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div class="register-body">
-          <div class="reg-outer-body">
-
-            <div>
-              <label for="username">Username <span>*</span></label>
-              <input id="username" formControlName="username">
-              <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
-                <small *ngIf="signupForm.get('username')?.errors?.['required']">Username is required.</small>
-                <!-- <small *ngIf="signinForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters.</small> -->
-              </div>
-            </div>
-            <div>
-              <label for="password">Password <span>*</span></label>
-              <input id="password" type="password" formControlName="password">
-              <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
-                <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</small>
-                <!-- <small *ngIf="signinForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</small> -->
-              </div>
-            </div>
-            <div>
-              <label for="confirmPassword">Confirm Password <span>*</span></label>
-              <input id="confirmPassword" type="password" formControlName="confirmPassword">
-              <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
-                <small *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Confirm Password do not match.</small>
-                <!-- <small *ngIf="signinForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</small> -->
-              </div>
-            </div>
-            <!-- <a>Forgot Password?</a> -->
-            <div class="reg-outer-body">
-              <button type="submit" [disabled]="signupForm.invalid">Create Account</button>
-            </div>
           </div>
         </div>
-      </form>
-    </div></mat-tab>
-  </mat-tab-group>
+
+        <div>
+          <label for="users">How many users do you expect to access TestSuite? <span>*</span></label>
+          <select id="users" formControlName="users">
+            <option value="">Select</option>
+            <option value="1-10">1-10</option>
+            <option value="11-50">11-50</option>
+            <option value="51-100">51-100</option>
+          </select>
+        </div>
+
+        <p class="info-text">
+          After signing up, we will instantly create a new TestSuite Cloud account for you. 
+          Already have a TestSuite account? <a href="#">Contact us</a>.
+        </p>
+
+        <div>
+          <label for="webAddress">Web Address <span>*</span></label>
+          <div class="web-address-group">
+            <input id="webAddress" formControlName="webAddress" placeholder="Choose a name">
+            <span class="suffix">.testsuite.io</span>
+          </div>
+          <small>Your account will be available under this address.</small>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" formControlName="terms">
+          <label for="terms">
+            I agree to the 
+            <a href="#">TestSuite Cloud Terms of Service</a>, 
+            <a href="#">Privacy Policy</a>, and 
+            <a href="#">Data Processing Agreement</a>.
+          </label>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="newsletter" formControlName="newsletter">
+          <label for="newsletter">
+            I'd like to receive newsletters about testing best practices.
+          </label>
+        </div>
+
+        <button type="submit" [disabled]="signupForm.invalid">Create Account</button>
+      </div>
+    </div>
+  </form>
 </div>
