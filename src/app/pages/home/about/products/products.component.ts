@@ -1,11 +1,12 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements AfterViewInit{
+export class ProductsComponent implements AfterViewInit {
   products = [
     {
       image: 'assets/images/product2.jpg',
@@ -75,24 +76,36 @@ export class ProductsComponent implements AfterViewInit{
 
   track!: HTMLElement;
 
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
   ngAfterViewInit() {
-    this.track = document.querySelector('.carousel-track') as HTMLElement;
+    if (isPlatformBrowser(this.platformId)) {
+      this.track = this.document.querySelector('.carousel-track') as HTMLElement;
+    }
   }
 
   scrollLeft() {
-    const cardWidth = this.getCardWidth();
-    this.track.scrollLeft -= cardWidth;
+    if (this.track) {
+      const cardWidth = this.getCardWidth();
+      this.track.scrollLeft -= cardWidth;
+    }
   }
 
   scrollRight() {
-    const cardWidth = this.getCardWidth();
-    this.track.scrollLeft += cardWidth;
+    if (this.track) {
+      const cardWidth = this.getCardWidth();
+      this.track.scrollLeft += cardWidth;
+    }
   }
 
   private getCardWidth(): number {
-    const card = this.track.querySelector('app-products-card') as HTMLElement;
-    return card ? card.offsetWidth + 20 : 320; // Add gap (20px) to card width
+    if (this.track) {
+      const card = this.track.querySelector('app-products-card') as HTMLElement;
+      return card ? card.offsetWidth + 20 : 320; // Add gap (20px) to card width
+    }
+    return 320;
   }
 }
-
-
